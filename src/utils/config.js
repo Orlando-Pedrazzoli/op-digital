@@ -7,7 +7,7 @@ export const siteConfig = {
 
   contact: {
     whatsapp: '351912164220',
-    email: 'contato@opdigital.com.br',
+    email: 'pedrazzoliorlando@gmail.com',
     instagram: '@opdigital',
   },
 
