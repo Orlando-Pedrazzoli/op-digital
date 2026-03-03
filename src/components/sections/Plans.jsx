@@ -1,4 +1,4 @@
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Shield } from 'lucide-react';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -12,8 +12,28 @@ export default function Plans() {
         <SectionHeader
           label='Investimento'
           title='Planos <em>transparentes.</em>'
-          description='Pagamento único pela criação. Sem mensalidades escondidas, sem pegadinhas. Você paga pelo que recebe.'
+          description='Pagamento único pela criação. Você paga pelo que recebe — e recebe tudo funcionando.'
         />
+
+        {/* Trust signals antes dos preços */}
+        <FadeIn>
+          <div className='flex flex-wrap justify-center gap-6 mb-12 text-[13px] text-zinc-500 dark:text-zinc-400'>
+            {[
+              'Contrato formal',
+              'Nota fiscal emitida',
+              'Entrega em 15–45 dias',
+              'Atendimento Brasil inteiro',
+            ].map(item => (
+              <div key={item} className='flex items-center gap-1.5'>
+                <Shield
+                  size={14}
+                  className='text-green-600 dark:text-green-400'
+                />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
 
         <div className='grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 max-w-260 mx-auto'>
           {plans.map((plan, i) => (
@@ -86,13 +106,26 @@ export default function Plans() {
           ))}
         </div>
 
+        {/* Garantia + manutenção */}
         <FadeIn delay={300}>
-          <div className='text-center mt-10 py-5 px-7 rounded-[14px] bg-amber-50 dark:bg-amber-900/15 border border-amber-200 dark:border-amber-700/50 max-w-150 mx-auto'>
-            <p className='text-sm text-amber-800 dark:text-amber-300 leading-relaxed'>
-              <strong>Manutenção mensal opcional:</strong> A partir de R${' '}
-              {maintenancePlan.price}/mês para{' '}
-              {maintenancePlan.description.toLowerCase()}
-            </p>
+          <div className='max-w-175 mx-auto mt-10 space-y-4'>
+            {/* Garantia */}
+            <div className='text-center py-5 px-7 rounded-[14px] bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-700/50'>
+              <p className='text-sm text-green-800 dark:text-green-300 leading-relaxed'>
+                <strong>Garantia de satisfação:</strong> Ajustes até a aprovação
+                final. Se o resultado não ficar como esperado, refinamos juntos
+                até chegar lá.
+              </p>
+            </div>
+
+            {/* Manutenção */}
+            <div className='text-center py-5 px-7 rounded-[14px] bg-amber-50 dark:bg-amber-900/15 border border-amber-200 dark:border-amber-700/50'>
+              <p className='text-sm text-amber-800 dark:text-amber-300 leading-relaxed'>
+                <strong>Manutenção mensal opcional:</strong> A partir de R${' '}
+                {maintenancePlan.price}/mês para{' '}
+                {maintenancePlan.description.toLowerCase()}
+              </p>
+            </div>
           </div>
         </FadeIn>
       </div>

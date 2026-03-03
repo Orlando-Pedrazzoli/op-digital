@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: 'OP Digital',
+  name: 'OP Create',
   tagline: 'Sites e Lojas Online Profissionais',
   description:
-    'Desenvolvimento de sites, lojas online e sistemas sob medida para seu negócio. Tecnologia de ponta com preço acessível.',
-  url: 'https://opdigital.com.br',
+    'Desenvolvimento de sites, lojas online e sistemas sob medida para seu negócio. Tecnologia moderna, código próprio e feito para converter.',
+  url: 'https://opcreate.com',
 
   contact: {
     whatsapp: '351912164220',
     email: 'pedrazzoliorlando@gmail.com',
-    instagram: '@opdigital',
+    instagram: '@opcreate',
   },
 
   owner: {
@@ -18,8 +18,8 @@ export const siteConfig = {
   },
 
   seo: {
-    defaultTitle: 'OP Digital | Sites e Lojas Online Profissionais',
-    titleTemplate: '%s | OP Digital',
+    defaultTitle: 'OP Create | Sites e Lojas Online Profissionais',
+    titleTemplate: '%s | OP Create',
     ogImage: '/og-image.jpg',
   },
 };

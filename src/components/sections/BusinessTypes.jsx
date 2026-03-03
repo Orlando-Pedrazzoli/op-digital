@@ -7,13 +7,12 @@ export default function BusinessTypes() {
   return (
     <section id='solucoes' className='py-24 px-6 bg-white dark:bg-zinc-950'>
       <div className='max-w-7xl mx-auto'>
-        {' '}
-        {/* alterei max-w-300 → max-w-7xl (valor comum) */}
         <SectionHeader
           label='Soluções para seu Negócio'
-          title='Qual é o <em>seu</em> tipo de negócio?'
-          description='Cada negócio tem necessidades diferentes. Desenvolvemos soluções específicas para o seu segmento, com as funcionalidades que realmente fazem diferença no seu dia a dia.'
+          title='Independentemente do segmento, seu site precisa <em>vender.</em>'
+          description='Cada negócio tem necessidades diferentes. Desenvolvo soluções específicas para o seu segmento, com as funcionalidades que realmente fazem diferença no dia a dia.'
         />
+
         <div className='grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-6 md:gap-8 mt-12'>
           {businessTypes.map((b, i) => (
             <FadeIn key={b.name} delay={i * 60}>
@@ -41,6 +40,7 @@ export default function BusinessTypes() {
             </FadeIn>
           ))}
         </div>
+
         <FadeIn delay={300}>
           <p className='text-center mt-12 text-sm text-zinc-500 dark:text-zinc-400'>
             Não encontrou seu segmento?{' '}

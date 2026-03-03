@@ -1,68 +1,124 @@
-import { CheckCircle, ExternalLink, ArrowRight, Rocket } from 'lucide-react'
-import FadeIn from '@/components/ui/FadeIn'
-import SectionHeader from '@/components/ui/SectionHeader'
-import Button from '@/components/ui/Button'
-import { portfolioMain } from '@/data/portfolio'
-import { getWhatsAppUrl } from '@/utils/whatsapp'
+import { ExternalLink, ArrowRight, Rocket } from 'lucide-react';
+import FadeIn from '@/components/ui/FadeIn';
+import SectionHeader from '@/components/ui/SectionHeader';
+import Button from '@/components/ui/Button';
+import { portfolioProjects } from '@/data/portfolio';
+import { getWhatsAppUrl } from '@/utils/whatsapp';
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 px-6 bg-[#F8F7F4] dark:bg-[#0C0C0F]">
-      <div className="max-w-300 mx-auto">
+    <section
+      id='portfolio'
+      className='py-24 px-6 bg-[#F8F7F4] dark:bg-[#0C0C0F]'
+    >
+      <div className='max-w-300 mx-auto'>
         <SectionHeader
-          label="Portfólio"
-          title='Projeto <em>real</em>, resultado real.'
+          label='Portfólio'
+          title='Projetos <em>reais</em>, resultados reais.'
+          description='Cada projeto é construído do zero com código próprio. Sem templates, sem limitações.'
         />
 
-        <FadeIn delay={100}>
-          <div className="rounded-3xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 max-w-240 mx-auto shadow-[0_20px_60px_rgba(0,0,0,0.04)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
-            {/* Banner */}
-            <div className="h-70 bg-linear-to-br from-zinc-900 via-emerald-900 to-green-600 flex flex-col items-center justify-center relative px-6 text-center">
-              <div className="absolute inset-0 opacity-10"
-                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='white'/%3E%3C/svg%3E")`, backgroundRepeat: 'repeat' }} />
-              <span className="relative font-display text-[clamp(28px,4vw,40px)] text-white">{portfolioMain.name}</span>
-              <span className="relative text-white/65 text-sm mt-2">{portfolioMain.type} — elitesurfing.com.br</span>
-              <Button href={portfolioMain.url} external variant="primary" size="sm" className="mt-5 relative">
-                Visitar Loja <ExternalLink size={14} />
-              </Button>
-            </div>
+        {/* Projects grid */}
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-260 mx-auto'>
+          {portfolioProjects.map((project, i) => (
+            <FadeIn key={project.name} delay={i * 100}>
+              <div className='group bg-white dark:bg-zinc-900 rounded-[20px] border border-zinc-200 dark:border-zinc-800 overflow-hidden h-full flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]'>
+                {/* Card header */}
+                <div className='p-7 pb-0'>
+                  <div className='flex items-start justify-between mb-4'>
+                    <div className='flex items-center gap-3'>
+                      <div
+                        className='w-11 h-11 rounded-xl flex items-center justify-center shrink-0'
+                        style={{ background: project.colorLight }}
+                      >
+                        <project.icon
+                          size={22}
+                          style={{ color: project.color }}
+                        />
+                      </div>
+                      <div>
+                        <h3 className='text-[17px] font-bold text-zinc-900 dark:text-zinc-100 leading-tight'>
+                          {project.name}
+                        </h3>
+                        <span
+                          className='text-[12px] font-semibold uppercase tracking-[0.5px]'
+                          style={{ color: project.color }}
+                        >
+                          {project.type}
+                        </span>
+                      </div>
+                    </div>
+                    <a
+                      href={project.url}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='w-9 h-9 rounded-lg border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-green-600 dark:hover:text-green-400 hover:border-green-600 dark:hover:border-green-500 transition-all no-underline shrink-0'
+                      aria-label={`Visitar ${project.name}`}
+                    >
+                      <ExternalLink size={15} />
+                    </a>
+                  </div>
 
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center border-b border-zinc-200 dark:border-zinc-800">
-              {portfolioMain.stats.map((s, i) => (
-                <div key={s.label}
-                  className={`flex-[1_1_120px] py-5 px-4 text-center ${i < portfolioMain.stats.length - 1 ? 'border-r border-zinc-200 dark:border-zinc-800' : ''}`}>
-                  <s.icon size={18} className="text-green-600 dark:text-green-400 mx-auto mb-1.5" />
-                  <div className="text-xl font-extrabold text-zinc-900 dark:text-zinc-100">{s.value}</div>
-                  <div className="text-[11px] text-zinc-400 dark:text-zinc-500 mt-0.5">{s.label}</div>
+                  <p className='text-[13px] leading-relaxed text-zinc-500 dark:text-zinc-400 mb-5'>
+                    {project.desc}
+                  </p>
                 </div>
-              ))}
-            </div>
 
-            {/* Features */}
-            <div className="p-8 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
-              {portfolioMain.features.map((f) => (
-                <div key={f} className="flex items-start gap-2.5">
-                  <CheckCircle size={16} className="text-green-600 dark:text-green-400 mt-0.5 shrink-0" />
-                  <span className="text-[13px] text-zinc-500 dark:text-zinc-400 leading-snug">{f}</span>
+                {/* Highlights */}
+                <div className='mx-7 flex gap-3 mb-5'>
+                  {project.highlights.map(h => (
+                    <div
+                      key={h.label}
+                      className='flex-1 text-center py-3 rounded-xl bg-zinc-50 dark:bg-zinc-800/60'
+                    >
+                      <div className='text-[17px] font-extrabold text-zinc-900 dark:text-zinc-100'>
+                        {h.value}
+                      </div>
+                      <div className='text-[10px] text-zinc-400 dark:text-zinc-500 mt-0.5'>
+                        {h.label}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
 
-        {/* Next project */}
-        <FadeIn delay={200}>
-          <div className="flex justify-center mt-10">
-            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-7 text-center max-w-100 transition-all duration-300 hover:border-green-600 dark:hover:border-green-500 hover:shadow-[0_8px_32px_rgba(22,163,74,0.06)] hover:-translate-y-1">
-              <div className="w-13 h-13 rounded-[14px] bg-sky-50 dark:bg-sky-900/20 flex items-center justify-center mx-auto mb-3.5">
-                <Rocket size={24} className="text-sky-600 dark:text-sky-400" />
+                {/* Tags */}
+                <div className='px-7 pb-7 mt-auto'>
+                  <div className='flex flex-wrap gap-1.5'>
+                    {project.tags.map(tag => (
+                      <span
+                        key={tag}
+                        className='px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 text-[11px] font-medium text-zinc-500 dark:text-zinc-400'
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100 mb-1.5">Seu projeto pode ser o próximo</h3>
-              <p className="text-[13px] text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-                Cada projeto que entrego vira referência. O próximo case de sucesso pode ser o do seu negócio.
+            </FadeIn>
+          ))}
+        </div>
+
+        {/* Next project CTA */}
+        <FadeIn delay={400}>
+          <div className='flex justify-center mt-10'>
+            <div className='bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-7 text-center max-w-100 transition-all duration-300 hover:border-green-600 dark:hover:border-green-500 hover:shadow-[0_8px_32px_rgba(22,163,74,0.06)] hover:-translate-y-1'>
+              <div className='w-13 h-13 rounded-[14px] bg-sky-50 dark:bg-sky-900/20 flex items-center justify-center mx-auto mb-3.5'>
+                <Rocket size={24} className='text-sky-600 dark:text-sky-400' />
+              </div>
+              <h3 className='text-base font-bold text-zinc-900 dark:text-zinc-100 mb-1.5'>
+                Seu projeto pode ser o próximo
+              </h3>
+              <p className='text-[13px] text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4'>
+                4 projetos entregues, 4 clientes satisfeitos. O próximo case de
+                sucesso pode ser o seu.
               </p>
-              <Button href={getWhatsAppUrl()} external variant="ghost" size="sm">
+              <Button
+                href={getWhatsAppUrl()}
+                external
+                variant='ghost'
+                size='sm'
+              >
                 Iniciar conversa <ArrowRight size={14} />
               </Button>
             </div>
@@ -70,5 +126,5 @@ export default function Portfolio() {
         </FadeIn>
       </div>
     </section>
-  )
+  );
 }
