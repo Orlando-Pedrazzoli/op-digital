@@ -1,32 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
   <head>
     <!-- Meta básicos -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
     <!-- SEO e Social Sharing -->
-    <title>OP Digital | Sites, Lojas Online e Sistemas Personalizados</title>
-    <meta name="description" content="Desenvolvimento de sites profissionais, lojas virtuais e sistemas sob medida para o seu negócio. Design moderno, performance otimizada e preço acessível." />
-    <meta name="keywords" content="desenvolvimento web, loja virtual, site profissional, e-commerce, sistema personalizado, criação de site, OP Digital" />
-    
+    <title>
+      Pedrazzoli Digital | Sites, Lojas Online e Sistemas Personalizados
+    </title>
+    <meta
+      name="description"
+      content="Desenvolvimento de sites profissionais, lojas virtuais e sistemas sob medida para o seu negócio. Design moderno, performance otimizada e preço acessível."
+    />
+    <meta
+      name="keywords"
+      content="desenvolvimento web, loja virtual, site profissional, e-commerce, sistema personalizado, criação de site, Pedrazzoli Digital"
+    />
+
     <!-- Open Graph -->
-    <meta property="og:title" content="OP Digital | Sites e Lojas Online Profissionais" />
-    <meta property="og:description" content="Crie o site ou loja online do seu negócio com design moderno, agendamento, pagamentos online e muito mais. Comece hoje." />
+    <meta
+      property="og:title"
+      content="Pedrazzoli Digital | Sites e Lojas Online Profissionais"
+    />
+    <meta
+      property="og:description"
+      content="Crie o site ou loja online do seu negócio com design moderno, agendamento, pagamentos online e muito mais. Comece hoje."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://opdigital.com.br" />
+    <meta property="og:url" content="https://pedrazzolidigital.com.br" />
     <meta property="og:image" content="/og-image.jpg" />
     <meta property="og:locale" content="pt_BR" />
-    
+
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="OP Digital | Sites e Lojas Online Profissionais" />
-    <meta name="twitter:description" content="Sites, e-commerces e sistemas personalizados com tecnologia atual e preço justo." />
+    <meta
+      name="twitter:title"
+      content="Pedrazzoli Digital | Sites e Lojas Online Profissionais"
+    />
+    <meta
+      name="twitter:description"
+      content="Sites, e-commerces e sistemas personalizados com tecnologia atual e preço justo."
+    />
     <meta name="twitter:image" content="/og-image.jpg" />
-    
+
     <!-- Tema -->
-    <meta name="theme-color" content="#16a34a" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)" />
+    <meta
+      name="theme-color"
+      content="#16a34a"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111827"
+      media="(prefers-color-scheme: dark)"
+    />
     <meta name="color-scheme" content="light dark" />
 
     <!-- ✅ FAVICON CORRETO -->
@@ -40,15 +71,20 @@
     <!-- Pré-conexões e fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Tema inicial -->
     <script>
-      (function() {
+      (function () {
         try {
           const saved = localStorage.getItem('op-theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          
+          const prefersDark = window.matchMedia(
+            '(prefers-color-scheme: dark)',
+          ).matches;
+
           if (saved === 'dark' || (!saved && prefersDark)) {
             document.documentElement.classList.add('dark');
             document.documentElement.style.colorScheme = 'dark';
@@ -62,10 +98,10 @@
       })();
     </script>
   </head>
-  
+
   <body class="antialiased">
     <div id="root"></div>
-    
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
