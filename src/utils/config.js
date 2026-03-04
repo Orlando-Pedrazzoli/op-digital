@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Pedrazzoli Digital',
   tagline: 'Sites e Lojas Online Profissionais',
   description:
-    'Desenvolvimento de sites, lojas online e sistemas sob medida para seu negócio. Tecnologia moderna, código próprio e feito para converter.',
+    'Sites profissionais, lojas virtuais e sistemas sob medida. Design moderno, código próprio, SEO otimizado e preço justo. Feito para converter.',
   url: 'https://pedrazzolidigital.com',
 
   contact: {
@@ -14,12 +14,26 @@ export const siteConfig = {
   owner: {
     name: 'Orlando Pedrazzoli',
     role: 'Full Stack Developer & AI Engineer',
-    location: 'São Paulo, Brasil',
+    location: 'Lisboa, Portugal',
   },
 
+  // SEO
   seo: {
-    defaultTitle: 'Pedrazzoli Digital | Sites e Lojas Online Profissionais',
+    defaultTitle: 'Pedrazzoli Digital | Sites e Lojas Online',
     titleTemplate: '%s | Pedrazzoli Digital',
     ogImage: '/og-image.jpg',
+    locale: 'pt_BR',
+    type: 'website',
+  },
+
+  // Social
+  social: {
+    instagram: '@opcreate',
+  },
+
+  // Geo-targeting Brasil
+  geo: {
+    region: 'BR',
+    placename: 'Brasil',
   },
 };

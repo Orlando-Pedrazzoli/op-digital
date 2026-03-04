@@ -1,21 +1,44 @@
 {
-  "name": "OP Digital",
-  "short_name": "OP Digital",
+  "name": "Pedrazzoli Digital",
+  "short_name": "Pedrazzoli",
+  "description": "Sites e Lojas Online Profissionais — código próprio, feito para converter.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#111827",
+  "background_color": "#F8F7F4",
   "theme_color": "#16a34a",
+  "lang": "pt-BR",
   "icons": [
     {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
     },
     {
       "src": "/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

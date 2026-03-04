@@ -1,53 +1,116 @@
 <!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
   <head>
-    <!-- Meta básicos -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- META BÁSICOS                                    -->
+    <!-- ═══════════════════════════════════════════════ -->
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- SEO e Social Sharing -->
-    <title>
-      Pedrazzoli Digital | Sites, Lojas Online e Sistemas Personalizados
-    </title>
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SEO — TÍTULO E DESCRIÇÃO                        -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <title>Pedrazzoli Digital | Sites e Lojas Online</title>
     <meta
       name="description"
-      content="Desenvolvimento de sites profissionais, lojas virtuais e sistemas sob medida para o seu negócio. Design moderno, performance otimizada e preço acessível."
+      content="Sites profissionais, lojas virtuais e sistemas sob medida. Design moderno, código próprio, SEO otimizado e preço justo. Feito para converter."
     />
     <meta
-      name="keywords"
-      content="desenvolvimento web, loja virtual, site profissional, e-commerce, sistema personalizado, criação de site, Pedrazzoli Digital"
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
 
-    <!-- Open Graph -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- CANONICAL + IDIOMA                              -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <link rel="canonical" href="https://pedrazzolidigital.com/" />
+    <link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://pedrazzolidigital.com/"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://pedrazzolidigital.com/"
+    />
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- GEO-TARGETING BRASIL                            -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <meta name="geo.region" content="BR" />
+    <meta name="geo.placename" content="Brasil" />
+    <meta name="content-language" content="pt-BR" />
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- VERIFICAÇÃO GOOGLE & BING (substituir valores)  -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="GOOGLE_VERIFICATION_CODE" />
+    <!-- Bing Webmaster Tools -->
+    <meta name="msvalidate.01" content="BING_VERIFICATION_CODE" />
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- OPEN GRAPH (Facebook, WhatsApp, LinkedIn)       -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pedrazzoli Digital" />
     <meta
       property="og:title"
-      content="Pedrazzoli Digital | Sites e Lojas Online Profissionais"
+      content="Pedrazzoli Digital | Sites e Lojas Online"
     />
     <meta
       property="og:description"
-      content="Crie o site ou loja online do seu negócio com design moderno, agendamento, pagamentos online e muito mais. Comece hoje."
+      content="Sites profissionais, lojas virtuais e sistemas sob medida. Código próprio, feito para converter."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pedrazzolidigital.com.br" />
-    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:url" content="https://pedrazzolidigital.com/" />
+    <meta
+      property="og:image"
+      content="https://pedrazzolidigital.com/og-image.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://pedrazzolidigital.com/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image:alt"
+      content="Pedrazzoli Digital — Sites e Lojas Online Profissionais"
+    />
     <meta property="og:locale" content="pt_BR" />
 
-    <!-- Twitter / X Cards -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- TWITTER / X CARDS                               -->
+    <!-- ═══════════════════════════════════════════════ -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@opcreate" />
+    <meta name="twitter:creator" content="@opcreate" />
     <meta
       name="twitter:title"
-      content="Pedrazzoli Digital | Sites e Lojas Online Profissionais"
+      content="Pedrazzoli Digital | Sites e Lojas Online"
     />
     <meta
       name="twitter:description"
-      content="Sites, e-commerces e sistemas personalizados com tecnologia atual e preço justo."
+      content="Sites profissionais, lojas virtuais e sistemas sob medida. Código próprio, feito para converter."
     />
-    <meta name="twitter:image" content="/og-image.jpg" />
+    <meta
+      name="twitter:image"
+      content="https://pedrazzolidigital.com/og-image.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Pedrazzoli Digital — Sites e Lojas Online Profissionais"
+    />
 
-    <!-- Tema -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- TEMA + COR                                      -->
+    <!-- ═══════════════════════════════════════════════ -->
     <meta
       name="theme-color"
       content="#16a34a"
@@ -60,15 +123,23 @@
     />
     <meta name="color-scheme" content="light dark" />
 
-    <!-- ✅ FAVICON CORRETO -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- FAVICONS + ÍCONES                               -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Manifest -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- MANIFEST (PWA)                                  -->
+    <!-- ═══════════════════════════════════════════════ -->
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- Pré-conexões e fontes -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PRÉ-CONEXÕES + FONTES                          -->
+    <!-- ═══════════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -76,7 +147,220 @@
       rel="stylesheet"
     />
 
-    <!-- Tema inicial -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- STRUCTURED DATA — JSON-LD (Schema.org)          -->
+    <!-- ═══════════════════════════════════════════════ -->
+
+    <!-- 1. Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Pedrazzoli Digital",
+        "url": "https://pedrazzolidigital.com",
+        "logo": "https://pedrazzolidigital.com/icon-512.png",
+        "image": "https://pedrazzolidigital.com/og-image.jpg",
+        "description": "Desenvolvimento de sites profissionais, lojas virtuais e sistemas sob medida. Código próprio, feito para converter.",
+        "founder": {
+          "@type": "Person",
+          "name": "Orlando Pedrazzoli",
+          "jobTitle": "Full Stack Developer & AI Engineer"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+351-912-164-220",
+          "contactType": "sales",
+          "availableLanguage": ["Portuguese", "English"]
+        },
+        "sameAs": ["https://instagram.com/opcreate"]
+      }
+    </script>
+
+    <!-- 2. ProfessionalService + LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["ProfessionalService", "LocalBusiness"],
+        "name": "Pedrazzoli Digital",
+        "url": "https://pedrazzolidigital.com",
+        "logo": "https://pedrazzolidigital.com/icon-512.png",
+        "image": "https://pedrazzolidigital.com/og-image.jpg",
+        "description": "Desenvolvimento de sites profissionais, lojas virtuais e sistemas sob medida para empresas no Brasil e Portugal.",
+        "telephone": "+351-912-164-220",
+        "email": "pedrazzoliorlando@gmail.com",
+        "priceRange": "R$997 - R$5000+",
+        "currenciesAccepted": "BRL, EUR",
+        "paymentAccepted": "PIX, Cartão de Crédito, Transferência Bancária",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lisboa",
+          "addressCountry": "PT"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 38.7223,
+          "longitude": -9.1393
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Brasil"
+          },
+          {
+            "@type": "Country",
+            "name": "Portugal"
+          }
+        ],
+        "serviceType": [
+          "Criação de Sites",
+          "Desenvolvimento de E-Commerce",
+          "Lojas Virtuais",
+          "Sistemas Personalizados",
+          "Web Design",
+          "Desenvolvimento de Aplicações Web"
+        ],
+        "knowsLanguage": ["pt-BR", "pt-PT", "en"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Planos de Desenvolvimento Web",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Site Institucional",
+              "description": "Presença online profissional com até 5 páginas, design responsivo, SEO básico e domínio próprio.",
+              "price": "997",
+              "priceCurrency": "BRL",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "997",
+                "priceCurrency": "BRL",
+                "valueAddedTaxIncluded": true
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "E-Commerce Completo",
+              "description": "Loja online com produtos ilimitados, checkout, PIX, cartão 12x, cálculo de frete e painel de gestão.",
+              "price": "2497",
+              "priceCurrency": "BRL",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "2497",
+                "priceCurrency": "BRL",
+                "valueAddedTaxIncluded": true
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Projeto Sob Medida",
+              "description": "Escopo personalizado com funcionalidades exclusivas, integrações, painel admin e suporte contínuo."
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- 3. WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pedrazzoli Digital",
+        "url": "https://pedrazzolidigital.com",
+        "description": "Sites e Lojas Online Profissionais — código próprio, feito para converter.",
+        "inLanguage": "pt-BR",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pedrazzoli Digital"
+        }
+      }
+    </script>
+
+    <!-- 4. FAQPage (mantido para E-E-A-T semântico — rich snippets limitados desde 2023 para sites comerciais) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quanto tempo demora para ficar pronto?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sites institucionais ficam prontos em 7 a 15 dias. E-commerces entre 3 a 5 semanas. Projetos sob medida dependem do escopo, mas definimos prazo antes de começar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso ter conhecimento técnico?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. O painel de gestão é feito para qualquer pessoa usar. Além disso, todo projeto inclui treinamento para você saber gerenciar tudo sozinho."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E se eu já tiver um site e quiser melhorar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Também trabalhamos com redesign e migração. Analisamos seu site atual e propomos as melhorias necessárias."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que acontece depois do lançamento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Todos os planos incluem suporte pós-lançamento. Também oferecemos planos de manutenção mensal para quem quer acompanhamento contínuo e atualizações."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Posso usar meu domínio atual?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim! Configuramos no domínio que você já tem ou ajudamos a registrar um novo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vocês fazem aplicativos também?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Para projetos que precisam de app mobile, desenvolvemos com React Native. Fale conosco para entendermos sua necessidade."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funciona o pagamento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dividimos em etapas: uma entrada para iniciar o projeto e o restante na entrega. Aceitamos PIX, transferência e cartão."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- 5. BreadcrumbList -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pedrazzolidigital.com/"
+          }
+        ]
+      }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- TEMA INICIAL (evita flash)                      -->
+    <!-- ═══════════════════════════════════════════════ -->
     <script>
       (function () {
         try {
@@ -100,6 +384,24 @@
   </head>
 
   <body class="antialiased">
+    <!-- Noscript fallback para crawlers que não executam JS -->
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: sans-serif">
+        <h1>Pedrazzoli Digital</h1>
+        <p>
+          Sites profissionais, lojas virtuais e sistemas sob medida. Design
+          moderno, código próprio e preço justo.
+        </p>
+        <p>
+          Contacto:
+          <a href="mailto:pedrazzoliorlando@gmail.com"
+            >pedrazzoliorlando@gmail.com</a
+          >
+          | WhatsApp: +351 912 164 220
+        </p>
+      </div>
+    </noscript>
+
     <div id="root"></div>
 
     <script type="module" src="/src/main.jsx"></script>
