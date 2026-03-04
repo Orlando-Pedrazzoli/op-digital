@@ -5,9 +5,9 @@ import { getWhatsAppUrl } from '@/utils/whatsapp';
 import { portfolioMain } from '@/data/portfolio';
 
 const stats = [
-  { value: '446+', label: 'Produtos online' },
-  { value: '3+', label: 'Anos entregando' },
-  { value: '100%', label: 'Código próprio' },
+  { value: '100%', label: 'Projetos entregues' },
+  { value: '3+', label: 'Anos de experiência' },
+  { value: '0', label: 'Templates usados' },
 ];
 
 export default function Hero() {
@@ -28,36 +28,36 @@ export default function Hero() {
 
           <FadeIn delay={80}>
             <h1 className='font-display text-[clamp(38px,5.5vw,60px)] font-normal leading-[1.08] mb-6 text-zinc-900 dark:text-zinc-100'>
-              Sites e lojas que
+              Sites e Lojas Online
               <br />
+              sob medida que{' '}
               <em className='italic text-green-600 dark:text-green-400'>
-                geram vendas
-              </em>{' '}
-              —<br />
-              mesmo offline.
+                realmente
+              </em>
+              <br />
+              geram vendas.
             </h1>
           </FadeIn>
 
           <FadeIn delay={160}>
             <p className='text-[17px] leading-relaxed text-zinc-500 dark:text-zinc-400 max-w-120 mb-9'>
-              Desenvolvimento sob medida com tecnologia moderna. Sem template,
-              sem WordPress — código próprio, rápido e feito para converter. Do
-              restaurante ao e-commerce, eu construo.
+              A maioria dos sites usa templates lentos e genéricos. Eu
+              desenvolvo código próprio, rápido e escalável — pensado para
+              conversão desde o primeiro pixel. Você fala direto comigo, sem
+              agência inflando o preço no meio.
             </p>
           </FadeIn>
 
           <FadeIn delay={240}>
             <div className='flex flex-wrap gap-3.5'>
               <Button
-                href={getWhatsAppUrl(
-                  'Olá! Gostaria de um orçamento para meu negócio.',
-                )}
+                href={getWhatsAppUrl('Olá! Quero iniciar meu projeto.')}
                 external
                 variant='primary'
                 size='lg'
                 whatsapp
               >
-                Falar no WhatsApp
+                Iniciar Projeto
               </Button>
               <Button href='#portfolio' variant='outline' size='lg'>
                 Ver Portfólio <ArrowRight size={15} />

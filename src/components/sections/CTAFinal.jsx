@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import {
+  Send,
+  CheckCircle,
+  AlertCircle,
+  Loader2,
+  MessageCircle,
+} from 'lucide-react';
 import FadeIn from '@/components/ui/FadeIn';
 import Button from '@/components/ui/Button';
 import { getWhatsAppUrl } from '@/utils/whatsapp';
@@ -88,18 +94,29 @@ export default function CTAFinal() {
                 24 horas. Sem compromisso.
               </p>
 
+              {/* Direct contact highlight */}
+              <div className='mb-6 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700'>
+                <p className='text-[13px] font-semibold text-zinc-900 dark:text-zinc-100 mb-1'>
+                  Você fala direto comigo.
+                </p>
+                <p className='text-[12px] text-zinc-500 dark:text-zinc-400 leading-relaxed'>
+                  Sem atendente, sem agência. Orlando Pedrazzoli — o
+                  desenvolvedor — responde pessoalmente.
+                </p>
+              </div>
+
               <div className='hidden lg:block'>
                 <p className='text-[13px] text-zinc-400 dark:text-white/35 mb-3'>
-                  Ou se preferir:
+                  Prefere resolver agora?
                 </p>
                 <Button
-                  href={getWhatsAppUrl()}
+                  href={getWhatsAppUrl('Olá! Quero iniciar meu projeto.')}
                   external
                   variant='primary'
                   size='md'
                   whatsapp
                 >
-                  Falar no WhatsApp
+                  Iniciar Projeto no WhatsApp
                 </Button>
               </div>
             </div>
@@ -197,7 +214,7 @@ export default function CTAFinal() {
                         </>
                       ) : (
                         <>
-                          <Send size={18} /> Enviar Mensagem
+                          <Send size={18} /> Iniciar Projeto
                         </>
                       )}
                     </button>
@@ -217,17 +234,17 @@ export default function CTAFinal() {
               {/* WhatsApp mobile fallback */}
               <div className='block lg:hidden mt-6 text-center'>
                 <p className='text-[13px] text-zinc-400 dark:text-white/35 mb-3'>
-                  Ou se preferir:
+                  Prefere resolver agora?
                 </p>
                 <Button
-                  href={getWhatsAppUrl()}
+                  href={getWhatsAppUrl('Olá! Quero iniciar meu projeto.')}
                   external
                   variant='primary'
                   size='md'
                   whatsapp
                   fullWidth
                 >
-                  Falar no WhatsApp
+                  Iniciar Projeto no WhatsApp
                 </Button>
               </div>
             </div>

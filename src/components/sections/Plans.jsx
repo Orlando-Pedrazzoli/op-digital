@@ -1,4 +1,4 @@
-import { CheckCircle, Shield } from 'lucide-react';
+import { CheckCircle, Shield, AlertTriangle } from 'lucide-react';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -15,7 +15,23 @@ export default function Plans() {
           description='Pagamento único pela criação. Você paga pelo que recebe — e recebe tudo funcionando.'
         />
 
-        {/* Trust signals antes dos preços */}
+        {/* Anchoring value before price */}
+        <FadeIn>
+          <div className='max-w-175 mx-auto mb-10 px-7 py-5 rounded-2xl bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-700/40 flex items-start gap-3'>
+            <AlertTriangle
+              size={18}
+              className='text-amber-600 dark:text-amber-400 mt-0.5 shrink-0'
+            />
+            <p className='text-[14px] text-amber-800 dark:text-amber-300 leading-relaxed'>
+              <strong>Um site mal feito custa caro todos os dias.</strong>{' '}
+              Lento, sem conversão ou travado em template genérico — você perde
+              cliente antes mesmo de ele ver seu produto. Um site profissional
+              trabalha por você 24h por dia, 7 dias por semana.
+            </p>
+          </div>
+        </FadeIn>
+
+        {/* Trust signals */}
         <FadeIn>
           <div className='flex flex-wrap justify-center gap-6 mb-12 text-[13px] text-zinc-500 dark:text-zinc-400'>
             {[
@@ -109,7 +125,6 @@ export default function Plans() {
         {/* Garantia + manutenção */}
         <FadeIn delay={300}>
           <div className='max-w-175 mx-auto mt-10 space-y-4'>
-            {/* Garantia */}
             <div className='text-center py-5 px-7 rounded-[14px] bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-700/50'>
               <p className='text-sm text-green-800 dark:text-green-300 leading-relaxed'>
                 <strong>Garantia de satisfação:</strong> Ajustes até a aprovação
@@ -118,7 +133,6 @@ export default function Plans() {
               </p>
             </div>
 
-            {/* Manutenção */}
             <div className='text-center py-5 px-7 rounded-[14px] bg-amber-50 dark:bg-amber-900/15 border border-amber-200 dark:border-amber-700/50'>
               <p className='text-sm text-amber-800 dark:text-amber-300 leading-relaxed'>
                 <strong>Manutenção mensal opcional:</strong> A partir de R${' '}

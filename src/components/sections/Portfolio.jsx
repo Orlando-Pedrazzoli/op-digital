@@ -1,4 +1,4 @@
-import { ExternalLink, ArrowRight, Rocket } from 'lucide-react';
+import { ExternalLink, ArrowRight, Rocket, CheckCircle } from 'lucide-react';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -15,7 +15,7 @@ export default function Portfolio() {
         <SectionHeader
           label='Portfólio'
           title='Projetos <em>reais</em>, resultados reais.'
-          description='Cada projeto é construído do zero com código próprio. Sem templates, sem limitações.'
+          description='Cada projeto é construído do zero com código próprio. Sem templates, sem limitações — e com resultados mensuráveis.'
         />
 
         {/* Projects grid */}
@@ -59,9 +59,22 @@ export default function Portfolio() {
                     </a>
                   </div>
 
-                  <p className='text-[13px] leading-relaxed text-zinc-500 dark:text-zinc-400 mb-5'>
+                  <p className='text-[13px] leading-relaxed text-zinc-500 dark:text-zinc-400 mb-4'>
                     {project.desc}
                   </p>
+
+                  {/* Result badge */}
+                  {project.result && (
+                    <div className='flex items-start gap-2 mb-5 px-3.5 py-2.5 rounded-xl bg-green-50 dark:bg-green-900/15 border border-green-200 dark:border-green-700/40'>
+                      <CheckCircle
+                        size={14}
+                        className='text-green-600 dark:text-green-400 mt-0.5 shrink-0'
+                      />
+                      <span className='text-[12px] text-green-800 dark:text-green-300 leading-snug font-medium'>
+                        {project.result}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Highlights */}
@@ -110,16 +123,17 @@ export default function Portfolio() {
                 Seu projeto pode ser o próximo
               </h3>
               <p className='text-[13px] text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4'>
-                4 projetos entregues, 4 clientes satisfeitos. O próximo case de
-                sucesso pode ser o seu.
+                100% dos projetos entregues com sucesso. O próximo case pode ser
+                o seu.
               </p>
               <Button
-                href={getWhatsAppUrl()}
+                href={getWhatsAppUrl('Olá! Quero iniciar meu projeto.')}
                 external
                 variant='ghost'
                 size='sm'
+                whatsapp
               >
-                Iniciar conversa <ArrowRight size={14} />
+                Iniciar Projeto <ArrowRight size={14} />
               </Button>
             </div>
           </div>

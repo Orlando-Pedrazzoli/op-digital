@@ -55,7 +55,7 @@ export const portfolioProjects = [
   {
     name: 'Elite Surfing',
     type: 'E-Commerce',
-    desc: 'Loja online completa com 446+ produtos, pagamento PIX e cartão, frete automático e painel admin.',
+    desc: 'Loja online completa desenvolvida do zero com 446+ produtos, checkout otimizado, PIX com desconto automático e painel admin. Operação 100% digital com vendas recorrentes no Brasil.',
     url: 'https://www.elitesurfing.com.br',
     color: '#16a34a',
     colorLight: '#dcfce7',
@@ -66,11 +66,12 @@ export const portfolioProjects = [
       { value: '12x', label: 'Sem Juros' },
       { value: '5%', label: 'OFF PIX' },
     ],
+    result: 'Loja no ar e vendendo em menos de 45 dias.',
   },
   {
     name: 'Centro Dentário Colombo',
     type: 'Site Institucional',
-    desc: 'Clínica dentária em Lisboa com agendamento, equipe médica, tratamentos e sistema bilingue PT/EN.',
+    desc: 'Site bilíngue PT/EN para clínica em Lisboa. Agendamento integrado, perfis de médicos, SEO local e conformidade total com GDPR. Presença digital profissional que transmite confiança.',
     url: 'https://www.centrodentariocolombo.com',
     color: '#0284c7',
     colorLight: '#e0f2fe',
@@ -81,11 +82,12 @@ export const portfolioProjects = [
       { value: '10+', label: 'Tratamentos' },
       { value: '100%', label: 'GDPR' },
     ],
+    result: 'Site entregue em 3 semanas, 100% conforme com GDPR.',
   },
   {
     name: 'Street Paint',
     type: 'Site + Orçamento Online',
-    desc: 'Oficina de chapa e pintura em Sintra com orçamento interativo por peça, chatbot AI e reviews Google.',
+    desc: 'Oficina em Sintra com orçamento interativo por peça do carro, chatbot de IA para atendimento automático e integração com reviews do Google. Clientes chegam já sabendo o preço.',
     url: 'https://www.streetpaint.pt',
     color: '#ea580c',
     colorLight: '#fff7ed',
@@ -96,11 +98,12 @@ export const portfolioProjects = [
       { value: '50+', label: 'Peças' },
       { value: '5★', label: 'Google' },
     ],
+    result: 'Orçamentos online reduzindo ligações desnecessárias.',
   },
   {
     name: 'Go Portugal Tours',
     type: 'Site de Turismo',
-    desc: 'Tours privados em Portugal com 24 roteiros, preços dinâmicos, reservas e suporte bilingue PT/EN.',
+    desc: '24 roteiros de tours privados com preços dinâmicos, sistema de reservas e suporte PT/EN. SEO forte para capturar turistas buscando experiências em Portugal.',
     url: 'https://www.goportugaltours.com',
     color: '#9333ea',
     colorLight: '#faf5ff',
@@ -111,6 +114,7 @@ export const portfolioProjects = [
       { value: '2', label: 'Idiomas' },
       { value: '5.0', label: 'Rating' },
     ],
+    result: 'Reservas diretas sem intermediários, mais margem para o cliente.',
   },
 ];
 
