@@ -65,7 +65,7 @@ export default function WorldMap() {
           <div className='max-w-260 mx-auto rounded-3xl overflow-hidden relative bg-[#111118] border border-zinc-700/60'>
             {/* Atmospheric gradient */}
             <div
-              className='absolute inset-0 pointer-events-none z-[1]'
+              className='absolute inset-0 pointer-events-none z-1'
               style={{
                 background:
                   'radial-gradient(ellipse 55% 65% at 40% 40%, rgba(22,163,74,0.08) 0%, transparent 100%)',
@@ -74,7 +74,7 @@ export default function WorldMap() {
 
             {/* Edge vignette */}
             <div
-              className='absolute inset-0 pointer-events-none z-[2]'
+              className='absolute inset-0 pointer-events-none z-2'
               style={{
                 boxShadow: 'inset 0 0 60px 20px #111118',
               }}
@@ -99,7 +99,7 @@ export default function WorldMap() {
               {/* Animated overlay — arcs & markers */}
               <svg
                 viewBox={`0 0 ${W} ${H}`}
-                className='absolute inset-0 w-full h-full pointer-events-none z-[5]'
+                className='absolute inset-0 w-full h-full pointer-events-none z-5'
                 style={{ padding: 'inherit' }}
                 preserveAspectRatio='xMidYMid meet'
               >
