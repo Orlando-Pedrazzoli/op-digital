@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, AlertTriangle } from 'lucide-react';
+import { CheckCircle, Shield, AlertTriangle, Crown } from 'lucide-react';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -15,7 +15,7 @@ export default function Plans() {
           description='Pagamento único pela criação. Você paga pelo que recebe — e recebe tudo funcionando.'
         />
 
-        {/* Anchoring value before price */}
+        {/* Anchoring value */}
         <FadeIn>
           <div className='max-w-175 mx-auto mb-10 px-7 py-5 rounded-2xl bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-700/40 flex items-start gap-3'>
             <AlertTriangle
@@ -57,51 +57,53 @@ export default function Plans() {
               <div
                 className={`
                 rounded-[20px] p-9 h-full flex flex-col relative overflow-hidden
-                transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_60px_rgba(0,0,0,0.1)]
+                transition-all duration-400 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_24px_60px_rgba(0,0,0,0.3)]
+                bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100
                 ${
                   plan.highlight
-                    ? 'bg-zinc-900 dark:bg-zinc-800 text-white border border-zinc-800 dark:border-zinc-700'
-                    : 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-800'
+                    ? 'border-2 border-green-600 dark:border-green-500 shadow-[0_8px_32px_rgba(22,163,74,0.10)] dark:shadow-[0_8px_32px_rgba(22,163,74,0.15)]'
+                    : 'border border-zinc-200 dark:border-zinc-800'
                 }
               `}
               >
+                {/* Popular badge */}
                 {plan.highlight && (
-                  <div className='absolute top-4.5 -right-7.5 bg-amber-600 text-white px-10 py-1 text-[10px] font-bold rotate-45 tracking-[1.5px] uppercase'>
-                    Mais pedido
+                  <div className='absolute top-0 right-0 flex items-center gap-1.5 bg-green-600 text-white pl-3 pr-4 py-1.5 rounded-bl-xl text-[11px] font-bold uppercase tracking-wider'>
+                    <Crown size={12} /> Mais pedido
                   </div>
                 )}
 
-                <p
-                  className={`text-xs font-semibold uppercase tracking-[1px] mb-1 ${plan.highlight ? 'text-white/50' : 'text-zinc-400 dark:text-zinc-500'}`}
-                >
+                <p className='text-[11px] font-semibold uppercase tracking-[1.5px] text-zinc-400 dark:text-zinc-500 mb-1'>
                   {plan.desc}
                 </p>
-                <h3 className='text-[22px] font-extrabold mb-5'>{plan.name}</h3>
+                <h3 className='text-[22px] font-extrabold text-zinc-900 dark:text-zinc-100 mb-6'>
+                  {plan.name}
+                </h3>
 
-                <div className='mb-6'>
+                {/* Price */}
+                <div className='mb-7'>
                   {plan.fromPrice && (
-                    <span className='text-[13px] opacity-60'>a partir de </span>
+                    <span className='text-[13px] text-zinc-400 dark:text-zinc-500'>
+                      a partir de{' '}
+                    </span>
                   )}
                   <span
-                    className={`font-extrabold ${plan.highlight ? 'text-white' : 'text-green-600 dark:text-green-400'}`}
+                    className='text-green-600 dark:text-green-400 font-extrabold'
                     style={{ fontSize: plan.fromPrice ? 44 : 32 }}
                   >
                     {plan.fromPrice ? `R$ ${plan.price}` : plan.price}
                   </span>
                 </div>
 
-                <div
-                  className={`border-t pt-5 mb-6 flex-1 ${plan.highlight ? 'border-white/10' : 'border-zinc-200 dark:border-zinc-800'}`}
-                >
+                {/* Divider */}
+                <div className='border-t border-zinc-100 dark:border-zinc-800 pt-6 mb-6 flex-1'>
                   {plan.features.map(f => (
-                    <div key={f} className='flex items-start gap-2.5 mb-2.5'>
+                    <div key={f} className='flex items-start gap-2.5 mb-3'>
                       <CheckCircle
                         size={15}
-                        className={`mt-0.5 shrink-0 ${plan.highlight ? 'text-green-400' : 'text-green-600 dark:text-green-400'}`}
+                        className='text-green-600 dark:text-green-400 mt-0.5 shrink-0'
                       />
-                      <span
-                        className={`text-[13px] leading-snug ${plan.highlight ? 'text-white/80' : 'text-zinc-500 dark:text-zinc-400'}`}
-                      >
+                      <span className='text-[13px] leading-snug text-zinc-600 dark:text-zinc-400'>
                         {f}
                       </span>
                     </div>

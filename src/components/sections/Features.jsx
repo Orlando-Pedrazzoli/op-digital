@@ -11,29 +11,29 @@ export default function Features() {
       <div className='max-w-300 mx-auto'>
         {/* Contrast block — "por que não template" */}
         <FadeIn>
-          <div className='max-w-260 mx-auto mb-14 rounded-2xl bg-zinc-900 dark:bg-zinc-800 p-10 flex flex-col md:flex-row gap-8 items-start'>
+          <div className='max-w-260 mx-auto mb-14 rounded-2xl bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 p-10 flex flex-col md:flex-row gap-8 items-start shadow-sm'>
             <div className='flex-1'>
-              <p className='text-[11px] font-semibold uppercase tracking-[1.5px] text-red-400 mb-3'>
+              <p className='text-[11px] font-semibold uppercase tracking-[1.5px] text-red-500 dark:text-red-400 mb-3'>
                 O problema
               </p>
-              <h3 className='text-[20px] font-bold text-white mb-3 leading-snug'>
+              <h3 className='text-[20px] font-bold text-zinc-900 dark:text-white mb-3 leading-snug'>
                 Templates lentos, genéricos e limitados.
               </h3>
-              <p className='text-[14px] text-zinc-400 leading-relaxed'>
+              <p className='text-[14px] text-zinc-500 dark:text-zinc-400 leading-relaxed'>
                 WordPress, Wix e Shopify parecem fáceis — mas cobram pelo que
                 limitam. Plugins pesados, visual igual ao do concorrente e você
                 sempre dependente de terceiros para qualquer mudança.
               </p>
             </div>
-            <div className='w-px bg-zinc-700 self-stretch hidden md:block' />
+            <div className='w-px bg-zinc-200 dark:bg-zinc-700 self-stretch hidden md:block' />
             <div className='flex-1'>
-              <p className='text-[11px] font-semibold uppercase tracking-[1.5px] text-green-400 mb-3'>
+              <p className='text-[11px] font-semibold uppercase tracking-[1.5px] text-green-600 dark:text-green-400 mb-3'>
                 A solução
               </p>
-              <h3 className='text-[20px] font-bold text-white mb-3 leading-snug'>
+              <h3 className='text-[20px] font-bold text-zinc-900 dark:text-white mb-3 leading-snug'>
                 Código próprio, rápido, escalável e feito para converter.
               </h3>
-              <p className='text-[14px] text-zinc-400 leading-relaxed'>
+              <p className='text-[14px] text-zinc-500 dark:text-zinc-400 leading-relaxed'>
                 Cada linha escrita do zero para o seu negócio. Performance
                 máxima, design único e liberdade total para crescer. Você fala
                 direto comigo — sem intermediários, sem agência inflando preço.
