@@ -1,13 +1,97 @@
-import { Zap, ArrowRight } from 'lucide-react';
+import {
+  Zap,
+  ArrowRight,
+  Globe,
+  ShoppingCart,
+  Code,
+  Search,
+  Palette,
+  Rocket,
+} from 'lucide-react';
 import FadeIn from '@/components/ui/FadeIn';
 import Button from '@/components/ui/Button';
-import OrbitingSkills from '@/components/ui/OrbitingSkills';
+import RadialOrbitalTimeline from '@/components/ui/RadialOrbitalTimeline';
 import { getWhatsAppUrl } from '@/utils/whatsapp';
 
 const stats = [
   { value: '100%', label: 'Projetos entregues' },
   { value: '5+', label: 'Anos de experiência' },
   { value: '0', label: 'Templates usados' },
+];
+
+const timelineData = [
+  {
+    id: 1,
+    title: 'Briefing',
+    date: 'Semana 1',
+    content:
+      'Reunião inicial para entender objetivos, público-alvo e funcionalidades do projeto.',
+    category: 'Planeamento',
+    icon: Zap,
+    relatedIds: [2],
+    status: 'completed',
+    energy: 100,
+  },
+  {
+    id: 2,
+    title: 'Design UI/UX',
+    date: 'Semana 2',
+    content:
+      'Criação do layout personalizado, identidade visual e protótipos interativos.',
+    category: 'Design',
+    icon: Palette,
+    relatedIds: [1, 3],
+    status: 'completed',
+    energy: 90,
+  },
+  {
+    id: 3,
+    title: 'Desenvolvimento',
+    date: 'Semana 3–4',
+    content:
+      'Código próprio com React/Next.js, integração de APIs, pagamentos e CMS.',
+    category: 'Código',
+    icon: Code,
+    relatedIds: [2, 4],
+    status: 'in-progress',
+    energy: 70,
+  },
+  {
+    id: 4,
+    title: 'E-Commerce',
+    date: 'Semana 4',
+    content:
+      'Loja virtual completa com carrinho, checkout, Pagar.me/Stripe e gestão de produtos.',
+    category: 'Loja',
+    icon: ShoppingCart,
+    relatedIds: [3, 5],
+    status: 'in-progress',
+    energy: 55,
+  },
+  {
+    id: 5,
+    title: 'SEO & Performance',
+    date: 'Semana 5',
+    content:
+      'Otimização para Google, Core Web Vitals, SSR, sitemap e structured data.',
+    category: 'SEO',
+    icon: Search,
+    relatedIds: [4, 6],
+    status: 'pending',
+    energy: 35,
+  },
+  {
+    id: 6,
+    title: 'Deploy & Suporte',
+    date: 'Semana 6',
+    content:
+      'Publicação em produção com domínio próprio, SSL, e suporte contínuo pós-launch.',
+    category: 'Deploy',
+    icon: Rocket,
+    relatedIds: [5],
+    status: 'pending',
+    energy: 15,
+  },
 ];
 
 export default function Hero() {
@@ -81,9 +165,9 @@ export default function Hero() {
           </FadeIn>
         </div>
 
-        {/* Right — Orbiting Skills */}
+        {/* Right — Radial Orbital Timeline */}
         <FadeIn delay={200} className='flex-[1_1_420px] flex justify-center'>
-          <OrbitingSkills />
+          <RadialOrbitalTimeline timelineData={timelineData} />
         </FadeIn>
       </div>
     </section>
