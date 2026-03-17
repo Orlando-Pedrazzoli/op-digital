@@ -7,7 +7,7 @@ import TechStack from '@/components/sections/TechStack';
 import Portfolio from '@/components/sections/Portfolio';
 import Testimonials from '@/components/sections/Testimonials';
 import AboutMe from '@/components/sections/AboutMe';
-import WorldMap from '@/components/sections/WorldMap';
+import VerticalTabs from '@/components/sections/VerticalTabs';
 import Process from '@/components/sections/Process';
 import BusinessTypes from '@/components/sections/BusinessTypes';
 import Features from '@/components/sections/Features';
@@ -47,7 +47,7 @@ export default function Home() {
         <AboutMe />
 
         {/* 4.5 Mapa — alcance global */}
-        <WorldMap />
+        <VerticalTabs />
 
         {/* 5. Como funciona — simplicidade do processo */}
         <Process />
