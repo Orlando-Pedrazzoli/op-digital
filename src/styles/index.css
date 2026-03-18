@@ -600,3 +600,25 @@
     transparent 70%
   );
 }
+/* ══════════════════════════════════════════════
+   3D FOLDER — CSS Variables
+   Colar no final do src/styles/index.css
+   ══════════════════════════════════════════════ */
+
+@theme inline {
+  --color-folder-back: var(--folder-back);
+  --color-folder-front: var(--folder-front);
+  --color-folder-tab: var(--folder-tab);
+}
+
+:root {
+  --folder-back: oklch(0.65 0.12 145);
+  --folder-front: oklch(0.7 0.14 150);
+  --folder-tab: oklch(0.6 0.1 140);
+}
+
+.dark {
+  --folder-back: oklch(0.55 0.12 145);
+  --folder-front: oklch(0.6 0.14 150);
+  --folder-tab: oklch(0.5 0.1 140);
+}
