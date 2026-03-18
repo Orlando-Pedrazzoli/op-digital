@@ -1,18 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import { Code, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { siteConfig } from '@/utils/config';
 import { getWhatsAppUrl } from '@/utils/whatsapp';
 import Button from '@/components/ui/Button';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 
 const navLinks = [
-  { label: 'Portfólio', href: '#portfolio' },
-  { label: 'Como Funciona', href: '#processo' },
-  { label: 'Soluções', href: '#solucoes' },
-  { label: 'Funcionalidades', href: '#funcionalidades' },
-  { label: 'Planos', href: '#planos' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Portfólio', href: '#portfolio', type: 'anchor' },
+  { label: 'Serviços', href: '/servicos', type: 'page' },
+  { label: 'Sobre', href: '/sobre', type: 'page' },
+  { label: 'Planos', href: '#planos', type: 'anchor' },
+  { label: 'FAQ', href: '/faq', type: 'page' },
 ];
 
 export default function Navbar() {
@@ -35,18 +34,27 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
-  // Handle nav link clicks — navigate to home first if on another page
-  const handleNavClick = (e, href) => {
+  const handleAnchorClick = (e, href) => {
     e.preventDefault();
     setMobileOpen(false);
 
     if (isHome) {
-      // Already on home — just scroll to section
       const el = document.querySelector(href);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      // Navigate to home, then scroll after render
       navigate('/' + href);
+    }
+  };
+
+  const handlePageClick = href => {
+    setMobileOpen(false);
+    navigate(href);
+  };
+
+  const handleLogoClick = e => {
+    if (isHome) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -63,8 +71,12 @@ export default function Navbar() {
       `}
       >
         <div className='max-w-300 mx-auto h-17 flex items-center justify-between'>
-          {/* Logo */}
-          <Link to='/' className='flex items-center gap-2.5 no-underline'>
+          {/* Logo — scroll to top on home, navigate to home on other pages */}
+          <Link
+            to='/'
+            onClick={handleLogoClick}
+            className='flex items-center gap-2.5 no-underline'
+          >
             <div className='w-8.5 h-8.5 flex items-center justify-center'>
               <img
                 src='/favicon.png'
@@ -79,16 +91,30 @@ export default function Navbar() {
 
           {/* Desktop */}
           <div className='hidden md:flex items-center gap-7'>
-            {navLinks.map(link => (
-              <a
-                key={link.href}
-                href={isHome ? link.href : `/${link.href}`}
-                onClick={e => handleNavClick(e, link.href)}
-                className='text-sm text-zinc-500 dark:text-zinc-400 no-underline font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors'
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map(link =>
+              link.type === 'page' ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`text-sm no-underline font-medium transition-colors ${
+                    location.pathname === link.href
+                      ? 'text-green-600 dark:text-green-400'
+                      : 'text-zinc-500 dark:text-zinc-400 hover:text-green-600 dark:hover:text-green-400'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={isHome ? link.href : `/${link.href}`}
+                  onClick={e => handleAnchorClick(e, link.href)}
+                  className='text-sm text-zinc-500 dark:text-zinc-400 no-underline font-medium hover:text-green-600 dark:hover:text-green-400 transition-colors'
+                >
+                  {link.label}
+                </a>
+              ),
+            )}
             <ThemeToggle />
             <Button
               href={getWhatsAppUrl()}
@@ -125,16 +151,27 @@ export default function Navbar() {
           >
             <X size={26} className='text-zinc-900 dark:text-zinc-100' />
           </button>
-          {navLinks.map(link => (
-            <a
-              key={link.href}
-              href={isHome ? link.href : `/${link.href}`}
-              onClick={e => handleNavClick(e, link.href)}
-              className='text-lg font-semibold text-zinc-900 dark:text-zinc-100 no-underline py-3 border-b border-zinc-100 dark:border-zinc-800'
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map(link =>
+            link.type === 'page' ? (
+              <button
+                key={link.href}
+                onClick={() => handlePageClick(link.href)}
+                className='text-lg font-semibold text-zinc-900 dark:text-zinc-100 text-left bg-transparent border-none cursor-pointer py-3 border-b border-zinc-100 dark:border-zinc-800'
+                style={{ borderBottom: '1px solid' }}
+              >
+                {link.label}
+              </button>
+            ) : (
+              <a
+                key={link.href}
+                href={isHome ? link.href : `/${link.href}`}
+                onClick={e => handleAnchorClick(e, link.href)}
+                className='text-lg font-semibold text-zinc-900 dark:text-zinc-100 no-underline py-3 border-b border-zinc-100 dark:border-zinc-800'
+              >
+                {link.label}
+              </a>
+            ),
+          )}
           <div className='mt-6'>
             <Button
               href={getWhatsAppUrl()}

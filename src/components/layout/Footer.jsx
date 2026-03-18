@@ -5,18 +5,17 @@ import { getWhatsAppUrl } from '@/utils/whatsapp';
 import { useCookieConsent } from '@/contexts/CookieProvider';
 
 const navLinks = [
-  { label: 'Portfólio', href: '#portfolio' },
-  { label: 'Como Funciona', href: '#processo' },
-  { label: 'Planos', href: '#planos' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contato', href: '#contato' },
+  { label: 'Portfólio', href: '/#portfolio' },
+  { label: 'Serviços', href: '/servicos' },
+  { label: 'Sobre', href: '/sobre' },
+  { label: 'Planos', href: '/#planos' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contato', href: '/#contato' },
 ];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { openPreferences } = useCookieConsent();
-  const location = useLocation();
-  const isHome = location.pathname === '/';
 
   return (
     <footer className='pt-16 pb-8 px-6 border-t border-zinc-200 dark:border-zinc-800 bg-[#F8F7F4] dark:bg-[#0C0C0F]'>
@@ -47,12 +46,21 @@ export default function Footer() {
             <ul className='space-y-2.5 list-none p-0 m-0'>
               {navLinks.map(link => (
                 <li key={link.href}>
-                  <a
-                    href={isHome ? link.href : `/${link.href}`}
-                    className='text-[13px] text-zinc-500 dark:text-zinc-400 no-underline hover:text-green-600 dark:hover:text-green-400 transition-colors'
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('/') && !link.href.startsWith('/#') ? (
+                    <Link
+                      to={link.href}
+                      className='text-[13px] text-zinc-500 dark:text-zinc-400 no-underline hover:text-green-600 dark:hover:text-green-400 transition-colors'
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className='text-[13px] text-zinc-500 dark:text-zinc-400 no-underline hover:text-green-600 dark:hover:text-green-400 transition-colors'
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
