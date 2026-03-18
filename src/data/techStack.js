@@ -1,69 +1,107 @@
-// Tech stack items for the scrolling carousel
-// Using simple text-based logos with brand colors for consistency
 export const techStack = [
   {
+    id: 'react',
     name: 'React',
-    color: '#61DAFB',
-    darkColor: '#61DAFB',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
   },
   {
+    id: 'nextjs',
     name: 'Next.js',
-    color: '#000000',
-    darkColor: '#FFFFFF',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
   },
   {
+    id: 'nodejs',
     name: 'Node.js',
-    color: '#339933',
-    darkColor: '#68CC8C',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
   },
   {
+    id: 'mongodb',
     name: 'MongoDB',
-    color: '#47A248',
-    darkColor: '#68CC8C',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
   },
   {
+    id: 'typescript',
     name: 'TypeScript',
-    color: '#3178C6',
-    darkColor: '#5A9BD5',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
   },
   {
+    id: 'tailwind',
     name: 'Tailwind CSS',
-    color: '#06B6D4',
-    darkColor: '#22D3EE',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
   },
   {
+    id: 'stripe',
     name: 'Stripe',
-    color: '#635BFF',
-    darkColor: '#7A73FF',
+    image: 'https://cdn.brandfetch.io/idxAg10C0L/theme/dark/symbol.svg',
   },
   {
+    id: 'vercel',
     name: 'Vercel',
-    color: '#000000',
-    darkColor: '#FFFFFF',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg',
   },
   {
+    id: 'vite',
     name: 'Vite',
-    color: '#646CFF',
-    darkColor: '#8B8FFF',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg',
   },
   {
+    id: 'framermotion',
     name: 'Framer Motion',
-    color: '#0055FF',
-    darkColor: '#3388FF',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg',
   },
   {
+    id: 'postgresql',
     name: 'PostgreSQL',
-    color: '#336791',
-    darkColor: '#5A9BD5',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
   },
   {
+    id: 'aws',
     name: 'AWS',
-    color: '#FF9900',
-    darkColor: '#FFB347',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
   },
   {
+    id: 'azure',
     name: 'Azure',
-    color: '#0078D4',
-    darkColor: '#4DA6FF',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+  },
+  {
+    id: 'figma',
+    name: 'Figma',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+  },
+  {
+    id: 'framer',
+    name: 'Framer',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg',
+  },
+  {
+    id: 'pagarme',
+    name: 'Pagar.me',
+    image: 'https://cdn.brandfetch.io/id_BBE3KQr/theme/dark/symbol.svg',
+  },
+  {
+    id: 'python',
+    name: 'Python',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+  },
+  {
+    id: 'shadcnui',
+    name: 'shadcn/ui',
+    image: 'https://avatars.githubusercontent.com/u/139895814?s=200&v=4',
   },
 ];

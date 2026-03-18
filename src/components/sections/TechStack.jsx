@@ -1,45 +1,58 @@
-import { useTheme } from '@/hooks/useTheme';
-import FadeIn from '@/components/ui/FadeIn';
+import AutoScroll from 'embla-carousel-auto-scroll';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
 import { techStack } from '@/data/techStack';
+import SectionHeader from '@/components/ui/SectionHeader';
+import FadeIn from '@/components/ui/FadeIn';
 
 export default function TechStack() {
-  const { isDark } = useTheme();
-
-  // Duplicate array for seamless infinite scroll
-  const items = [...techStack, ...techStack];
-
   return (
-    <section className='py-14 px-6 bg-[#F8F7F4] dark:bg-[#0C0C0F] overflow-hidden'>
-      <FadeIn>
-        <p className='text-center text-xs font-bold tracking-[2.5px] uppercase text-zinc-400 dark:text-zinc-500 mb-8'>
-          Tecnologias que utilizo
-        </p>
+    <section className='py-20 px-6 bg-[#F8F7F4] dark:bg-[#0C0C0F]'>
+      <div className='max-w-7xl mx-auto'>
+        <SectionHeader
+          label='Tecnologias'
+          title='Ferramentas que <em>utilizo.</em>'
+          description='Stack moderna e testada em produção. Cada tecnologia é escolhida pelo resultado que entrega ao seu negócio.'
+        />
 
-        <div className='relative max-w-300 mx-auto'>
-          {/* Gradient masks */}
-          <div className='absolute left-0 top-0 bottom-0 w-20 z-10 bg-linear-to-r from-[#F8F7F4] dark:from-[#0C0C0F] to-transparent pointer-events-none' />
-          <div className='absolute right-0 top-0 bottom-0 w-20 z-10 bg-linear-to-l from-[#F8F7F4] dark:from-[#0C0C0F] to-transparent pointer-events-none' />
-
-          {/* Scrolling track */}
-          <div className='flex animate-scroll-x hover:[animation-play-state:paused]'>
-            {items.map((tech, i) => (
-              <div
-                key={`${tech.name}-${i}`}
-                className='shrink-0 mx-8 flex items-center gap-2.5 group cursor-default'
+        <FadeIn>
+          <div className='mt-12'>
+            <div className='relative mx-auto flex items-center justify-center lg:max-w-5xl'>
+              <Carousel
+                opts={{ loop: true }}
+                plugins={[AutoScroll({ playOnInit: true, speed: 1 })]}
               >
-                <span
-                  className='text-[22px] md:text-[26px] font-extrabold tracking-tight transition-transform duration-300 group-hover:scale-110'
-                  style={{
-                    color: isDark ? tech.darkColor : tech.color,
-                  }}
-                >
-                  {tech.name}
-                </span>
-              </div>
-            ))}
+                <CarouselContent className='ml-0'>
+                  {techStack.map(tech => (
+                    <CarouselItem
+                      key={tech.id}
+                      className='flex basis-1/4 justify-center pl-0 sm:basis-1/5 md:basis-1/6 lg:basis-[12.5%]'
+                    >
+                      <div className='mx-6 flex shrink-0 flex-col items-center justify-center gap-2'>
+                        <img
+                          src={tech.image}
+                          alt={tech.name}
+                          className='h-10 w-10 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0'
+                          loading='lazy'
+                        />
+                        <span className='text-[11px] text-zinc-400 dark:text-zinc-500 font-medium'>
+                          {tech.name}
+                        </span>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+              {/* Fade edges */}
+              <div className='absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#F8F7F4] dark:from-[#0C0C0F] to-transparent pointer-events-none' />
+              <div className='absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#F8F7F4] dark:from-[#0C0C0F] to-transparent pointer-events-none' />
+            </div>
           </div>
-        </div>
-      </FadeIn>
+        </FadeIn>
+      </div>
     </section>
   );
 }
