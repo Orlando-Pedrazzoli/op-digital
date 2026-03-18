@@ -18,8 +18,8 @@
    - Use oklch() para cores modernas e acessíveis
 */
 @theme {
-  --color-background: oklch(0.12 0.05 240); /* dark bg */
-  --color-surface: oklch(0.14 0.04 240); /* cards / panels */
+  --color-background: oklch(0.15 0.04 270); /* dark bg — #141735 */
+  --color-surface: oklch(0.17 0.04 270); /* cards / panels */
   --color-primary: oklch(0.68 0.15 145); /* verde #16A34A aproximado */
   --color-primary-dark: oklch(0.58 0.14 145);
   --color-text: oklch(0.95 0.02 240); /* texto principal claro */
@@ -179,11 +179,11 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.15 0.04 270);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.18 0.04 270);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.18 0.04 270);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
@@ -202,7 +202,7 @@
   --chart-3: oklch(0.546 0.245 262.881);
   --chart-4: oklch(0.488 0.243 264.376);
   --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
+  --sidebar: oklch(0.18 0.04 270);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -280,22 +280,22 @@
   }
 
   .dark {
-    --background: oklch(0.12 0.05 240);
+    --background: oklch(0.15 0.04 270);
     --foreground: oklch(0.95 0.02 240);
-    --card: oklch(0.14 0.04 240);
+    --card: oklch(0.17 0.04 270);
     --card-foreground: oklch(0.95 0.02 240);
     --primary: oklch(0.68 0.15 145);
-    --primary-foreground: oklch(0.12 0.05 240);
-    --secondary: oklch(0.2 0.03 240);
+    --primary-foreground: oklch(0.15 0.04 270);
+    --secondary: oklch(0.22 0.04 270);
     --secondary-foreground: oklch(0.95 0.02 240);
-    --muted: oklch(0.2 0.03 240);
+    --muted: oklch(0.22 0.04 270);
     --muted-foreground: oklch(0.65 0.02 240);
-    --accent: oklch(0.2 0.03 240);
+    --accent: oklch(0.22 0.04 270);
     --accent-foreground: oklch(0.95 0.02 240);
     --destructive: oklch(0.55 0.2 25);
     --destructive-foreground: oklch(0.98 0.01 240);
-    --border: oklch(0.2 0.03 240);
-    --input: oklch(0.2 0.03 240);
+    --border: oklch(0.22 0.04 270);
+    --input: oklch(0.22 0.04 270);
     --ring: oklch(0.68 0.15 145);
   }
 }
@@ -306,7 +306,7 @@
 .ethereal-hero {
   position: relative;
   width: 100%;
-  background: #0a0a0a;
+  background: #141735;
 }
 
 .ethereal-canvas-wrapper {
@@ -381,10 +381,10 @@
   }
 }
 
-/* Headline — RESPONSIVO: mínimo reduzido para mobile */
+/* Headline — grande e impactante em mobile */
 .ethereal-section .section-headline {
   font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(2.8rem, 12vw, 10rem);
+  font-size: clamp(4.2rem, 12vw, 10rem);
   font-weight: 400;
   line-height: 0.92;
   color: white;
@@ -392,20 +392,20 @@
   letter-spacing: -0.03em;
 }
 
-/* Subheadline — verde, abaixo do headline */
+/* Subheadline — verde, destaque em mobile */
 .ethereal-section .section-subheadline {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-size: clamp(1.1rem, 4vw, 2.8rem);
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
   font-weight: 300;
   color: rgba(74, 222, 128, 0.8);
   margin: 0.6rem 0 0 0;
   letter-spacing: 0.05em;
 }
 
-/* Body text — centrado com max-width */
+/* Body text — mais legível em mobile */
 .ethereal-section .section-body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-size: clamp(0.875rem, 1.8vw, 1.25rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
@@ -417,7 +417,7 @@
 .ethereal-loading {
   position: fixed;
   inset: 0;
-  background: #0a0a0a;
+  background: #141735;
   display: flex;
   align-items: center;
   justify-content: center;

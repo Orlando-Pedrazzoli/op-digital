@@ -29,16 +29,16 @@ export default function TechStack() {
                   {techStack.map(tech => (
                     <CarouselItem
                       key={tech.id}
-                      className='flex basis-1/4 justify-center pl-0 sm:basis-1/5 md:basis-1/6 lg:basis-[12.5%]'
+                      className='flex basis-[16%] justify-center pl-0 sm:basis-1/5 md:basis-1/6 lg:basis-[12.5%]'
                     >
-                      <div className='mx-6 flex shrink-0 flex-col items-center justify-center gap-2'>
+                      <div className='sm:mx-6 flex shrink-0 flex-col items-center justify-center gap-1.5 sm:gap-2'>
                         <img
                           src={tech.image}
                           alt={tech.name}
-                          className='h-10 w-10 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0'
+                          className='h-8 w-8 sm:h-10 sm:w-10 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 dark:grayscale-0 dark:opacity-85 dark:hover:opacity-100'
                           loading='lazy'
                         />
-                        <span className='text-[11px] text-zinc-400 dark:text-zinc-500 font-medium'>
+                        <span className='text-[9px] sm:text-[11px] text-zinc-400 dark:text-zinc-400 font-medium'>
                           {tech.name}
                         </span>
                       </div>
@@ -46,9 +46,6 @@ export default function TechStack() {
                   ))}
                 </CarouselContent>
               </Carousel>
-              {/* Fade edges */}
-              <div className='absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#F8F7F4] dark:from-[#0C0C0F] to-transparent pointer-events-none' />
-              <div className='absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#F8F7F4] dark:from-[#0C0C0F] to-transparent pointer-events-none' />
             </div>
           </div>
         </FadeIn>

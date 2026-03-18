@@ -19,21 +19,22 @@ function useResponsiveCarousel() {
     const calc = () => {
       const vw = window.innerWidth;
       if (vw < 480) {
-        const cw = Math.min(260, vw - 60);
+        const cw = Math.min(220, vw - 80);
         setDims({
           cardWidth: cw,
-          cardHeight: 260,
-          zDepth: 180,
-          containerWidth: cw * 1.5,
-          perspective: 700,
+          cardHeight: 220,
+          zDepth: 140,
+          containerWidth: cw * 1.4,
+          perspective: 600,
         });
       } else if (vw < 768) {
+        const cw = Math.min(250, vw - 70);
         setDims({
-          cardWidth: 270,
-          cardHeight: 270,
-          zDepth: 240,
-          containerWidth: 540,
-          perspective: 900,
+          cardWidth: cw,
+          cardHeight: 250,
+          zDepth: 200,
+          containerWidth: cw * 1.5,
+          perspective: 800,
         });
       } else {
         setDims({
