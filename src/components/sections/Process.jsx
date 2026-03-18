@@ -2,9 +2,7 @@ import { MessageCircle, Briefcase, Code, Rocket } from 'lucide-react';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { processSteps } from '@/data/portfolio';
-
 const icons = [MessageCircle, Briefcase, Code, Rocket];
-
 export default function Process() {
   return (
     <section id='processo' className='py-24 px-6 bg-white dark:bg-zinc-950'>
@@ -13,8 +11,7 @@ export default function Process() {
           label='Como Funciona'
           title='Do primeiro contato ao <em>site no ar.</em>'
         />
-
-        <div className='grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-8'>
           {processSteps.map((step, i) => {
             const Icon = icons[i];
             return (

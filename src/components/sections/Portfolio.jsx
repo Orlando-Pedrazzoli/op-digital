@@ -3,7 +3,6 @@ import FadeIn from '@/components/ui/FadeIn';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
 import { CardStack } from '@/components/ui/CardStack';
-
 const portfolioItems = [
   {
     id: 1,
@@ -35,7 +34,6 @@ const portfolioItems = [
     href: 'https://www.goportugaltours.com',
   },
 ];
-
 export default function Portfolio() {
   return (
     <section
@@ -48,7 +46,6 @@ export default function Portfolio() {
           title='Projetos <em>reais</em>, resultados reais.'
           description='Cada projeto é construído do zero com código próprio. Sem templates, sem limitações — e com resultados mensuráveis.'
         />
-
         <FadeIn>
           <div className='mx-auto w-full max-w-5xl'>
             <CardStack
@@ -62,7 +59,6 @@ export default function Portfolio() {
               cardHeight={340}
             />
           </div>
-
           {/* CTA Button */}
           <div className='flex justify-center mt-12'>
             <Button href='#' variant='outline' size='lg'>

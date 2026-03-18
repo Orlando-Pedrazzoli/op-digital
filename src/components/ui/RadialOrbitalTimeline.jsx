@@ -4,6 +4,54 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
+/* ─── Hook para dimensões responsivas da órbita ─── */
+function useResponsiveOrbit() {
+  const [dims, setDims] = useState({
+    radius: 160,
+    orbitSize: 320,
+    cardWidth: 240,
+    centerSize: 56,
+    perspective: 1000,
+  });
+
+  useEffect(() => {
+    const calc = () => {
+      const vw = window.innerWidth;
+      if (vw < 400) {
+        setDims({
+          radius: 100,
+          orbitSize: 200,
+          cardWidth: 200,
+          centerSize: 40,
+          perspective: 600,
+        });
+      } else if (vw < 640) {
+        setDims({
+          radius: 120,
+          orbitSize: 240,
+          cardWidth: 220,
+          centerSize: 48,
+          perspective: 750,
+        });
+      } else {
+        setDims({
+          radius: 160,
+          orbitSize: 320,
+          cardWidth: 240,
+          centerSize: 56,
+          perspective: 1000,
+        });
+      }
+    };
+
+    calc();
+    window.addEventListener('resize', calc);
+    return () => window.removeEventListener('resize', calc);
+  }, []);
+
+  return dims;
+}
+
 export default function RadialOrbitalTimeline({ timelineData }) {
   const [expandedItems, setExpandedItems] = useState({});
   const [rotationAngle, setRotationAngle] = useState(0);
@@ -14,6 +62,9 @@ export default function RadialOrbitalTimeline({ timelineData }) {
   const containerRef = useRef(null);
   const orbitRef = useRef(null);
   const nodeRefs = useRef({});
+
+  const { radius, orbitSize, cardWidth, centerSize, perspective } =
+    useResponsiveOrbit();
 
   const handleContainerClick = e => {
     if (e.target === containerRef.current || e.target === orbitRef.current) {
@@ -87,7 +138,6 @@ export default function RadialOrbitalTimeline({ timelineData }) {
 
   const calculateNodePosition = (index, total) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = 160;
     const radian = (angle * Math.PI) / 180;
 
     const x = radius * Math.cos(radian) + centerOffset.x;
@@ -121,6 +171,20 @@ export default function RadialOrbitalTimeline({ timelineData }) {
     }
   };
 
+  /* Calcula se o card expandido deve abrir para esquerda/direita */
+  const getCardAlignment = (index, total) => {
+    const angle = ((index / total) * 360 + rotationAngle) % 360;
+    const normalizedAngle = ((angle % 360) + 360) % 360;
+    // Se o node está na metade direita, abre card para esquerda
+    if (normalizedAngle > 45 && normalizedAngle < 180) {
+      return 'right-0 translate-x-0';
+    }
+    if (normalizedAngle > 180 && normalizedAngle < 315) {
+      return 'left-0 translate-x-0';
+    }
+    return 'left-1/2 -translate-x-1/2';
+  };
+
   return (
     <div
       className='w-full aspect-square max-w-[420px] flex items-center justify-center relative overflow-visible'
@@ -132,22 +196,44 @@ export default function RadialOrbitalTimeline({ timelineData }) {
           className='absolute w-full h-full flex items-center justify-center'
           ref={orbitRef}
           style={{
-            perspective: '1000px',
+            perspective: `${perspective}px`,
             transform: `translate(${centerOffset.x}px, ${centerOffset.y}px)`,
           }}
         >
-          {/* Centro pulsante */}
-          <div className='absolute w-14 h-14 rounded-full bg-gradient-to-br from-green-500 via-emerald-500 to-teal-500 animate-pulse flex items-center justify-center z-10'>
-            <div className='absolute w-18 h-18 rounded-full border border-green-400/20 animate-ping opacity-70' />
+          {/* Centro pulsante — responsive */}
+          <div
+            className='absolute rounded-full bg-gradient-to-br from-green-500 via-emerald-500 to-teal-500 animate-pulse flex items-center justify-center z-10'
+            style={{ width: centerSize, height: centerSize }}
+          >
             <div
-              className='absolute w-22 h-22 rounded-full border border-green-400/10 animate-ping opacity-50'
-              style={{ animationDelay: '0.5s' }}
+              className='absolute rounded-full border border-green-400/20 animate-ping opacity-70'
+              style={{
+                width: centerSize * 1.3,
+                height: centerSize * 1.3,
+              }}
             />
-            <div className='w-7 h-7 rounded-full bg-white/80 backdrop-blur-md' />
+            <div
+              className='absolute rounded-full border border-green-400/10 animate-ping opacity-50'
+              style={{
+                width: centerSize * 1.6,
+                height: centerSize * 1.6,
+                animationDelay: '0.5s',
+              }}
+            />
+            <div
+              className='rounded-full bg-white/80 backdrop-blur-md'
+              style={{
+                width: centerSize * 0.5,
+                height: centerSize * 0.5,
+              }}
+            />
           </div>
 
-          {/* Órbita circular */}
-          <div className='absolute w-80 h-80 rounded-full border border-zinc-300/20 dark:border-white/10' />
+          {/* Órbita circular — responsive */}
+          <div
+            className='absolute rounded-full border border-zinc-300/20 dark:border-white/10'
+            style={{ width: orbitSize, height: orbitSize }}
+          />
 
           {/* Nodes */}
           {timelineData.map((item, index) => {
@@ -162,6 +248,8 @@ export default function RadialOrbitalTimeline({ timelineData }) {
               zIndex: isExpanded ? 200 : position.zIndex,
               opacity: isExpanded ? 1 : position.opacity,
             };
+
+            const cardAlign = getCardAlignment(index, timelineData.length);
 
             return (
               <div
@@ -204,10 +292,12 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                   <Icon size={14} />
                 </div>
 
-                {/* Label */}
+                {/* Label — allow wrapping on small screens */}
                 <div
                   className={cn(
-                    'absolute top-11 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold tracking-wider transition-all duration-300',
+                    'absolute top-11 left-1/2 -translate-x-1/2 text-center text-[10px] font-semibold tracking-wider transition-all duration-300',
+                    'whitespace-nowrap sm:whitespace-nowrap',
+                    'max-w-[80px] sm:max-w-none truncate sm:overflow-visible',
                     isExpanded
                       ? 'text-green-600 dark:text-green-400 scale-110'
                       : 'text-zinc-500 dark:text-zinc-400',
@@ -216,11 +306,17 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                   {item.title}
                 </div>
 
-                {/* Expanded card */}
+                {/* Expanded card — responsive width and positioning */}
                 {isExpanded && (
-                  <Card className='absolute top-18 left-1/2 -translate-x-1/2 w-60 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-lg border-green-200 dark:border-green-800/40 shadow-xl shadow-green-500/10 overflow-visible'>
+                  <Card
+                    className={cn(
+                      'absolute top-18 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-lg border-green-200 dark:border-green-800/40 shadow-xl shadow-green-500/10 overflow-visible',
+                      cardAlign,
+                    )}
+                    style={{ width: cardWidth }}
+                  >
                     <div className='absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-green-400/50' />
-                    <CardHeader className='pb-2 p-4'>
+                    <CardHeader className='pb-2 p-3 sm:p-4'>
                       <div className='flex justify-between items-center'>
                         <Badge
                           className={cn(
@@ -242,7 +338,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                         {item.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className='text-[11px] text-zinc-600 dark:text-zinc-300 p-4 pt-0'>
+                    <CardContent className='text-[11px] text-zinc-600 dark:text-zinc-300 p-3 sm:p-4 pt-0'>
                       <p>{item.content}</p>
 
                       <div className='mt-3 pt-2 border-t border-zinc-200 dark:border-zinc-700'>

@@ -8,6 +8,11 @@
 
 @import '@fontsource-variable/geist';
 
+/* ══════════════════════════════════════════════
+   GLOBAL: Scroll horizontal bloqueado via wrapper no App.jsx
+   (overflow-x: clip na div root — não usar no html/body para não quebrar sticky)
+   ══════════════════════════════════════════════ */
+
 /* Definição de tokens do tema (cores, fontes, etc.)
    - Use --color-* para cores → gera utilities como bg-primary, text-primary, etc.
    - Use oklch() para cores modernas e acessíveis
@@ -250,10 +255,8 @@
 }
 /* ══════════════════════════════════════════════
    CSS ADDITIONS FOR SHADCN COMPONENTS
-   Adicionar ao final do src/styles/index.css
    ══════════════════════════════════════════════ */
 
-/* shadcn CSS variables — necessárias para os componentes Badge, Card, Button */
 @layer base {
   :root {
     --background: oklch(0.97 0.01 240);
@@ -297,9 +300,7 @@
   }
 }
 /* ══════════════════════════════════════════════
-   ETHEREAL HERO — CSS
-   Colar no final do src/styles/index.css
-   (substituir o bloco anterior do ethereal)
+   ETHEREAL HERO — CSS (RESPONSIVE FIX)
    ══════════════════════════════════════════════ */
 
 .ethereal-hero {
@@ -323,7 +324,7 @@
   display: block;
 }
 
-/* Scroll progress */
+/* Scroll progress — ESCONDER EM MOBILE */
 .ethereal-progress {
   position: fixed;
   top: 50%;
@@ -335,6 +336,12 @@
   border-radius: 1px;
   z-index: 50;
   overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .ethereal-progress {
+    display: none;
+  }
 }
 
 .ethereal-progress-bar {
@@ -365,13 +372,19 @@
 .ethereal-section-content {
   text-align: center;
   max-width: 900px;
-  padding: 0 2rem;
+  padding: 0 1.25rem;
 }
 
-/* Headline — grande e centrado sobre a esfera */
+@media (min-width: 768px) {
+  .ethereal-section-content {
+    padding: 0 2rem;
+  }
+}
+
+/* Headline — RESPONSIVO: mínimo reduzido para mobile */
 .ethereal-section .section-headline {
   font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(4.5rem, 12vw, 10rem);
+  font-size: clamp(2.8rem, 12vw, 10rem);
   font-weight: 400;
   line-height: 0.92;
   color: white;
@@ -382,7 +395,7 @@
 /* Subheadline — verde, abaixo do headline */
 .ethereal-section .section-subheadline {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  font-size: clamp(1.1rem, 4vw, 2.8rem);
   font-weight: 300;
   color: rgba(74, 222, 128, 0.8);
   margin: 0.6rem 0 0 0;
@@ -392,7 +405,7 @@
 /* Body text — centrado com max-width */
 .ethereal-section .section-body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-size: clamp(0.875rem, 1.8vw, 1.25rem);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
@@ -441,7 +454,6 @@
 }
 /* ══════════════════════════════════════════════
    HOLOGRAPHIC CARD — CSS
-   Colar no final do src/styles/index.css
    ══════════════════════════════════════════════ */
 
 .holo-card {
@@ -602,7 +614,6 @@
 }
 /* ══════════════════════════════════════════════
    3D FOLDER — CSS Variables
-   Colar no final do src/styles/index.css
    ══════════════════════════════════════════════ */
 
 @theme inline {

@@ -10,7 +10,7 @@ import Terms from '@/pages/Terms';
 
 function App() {
   return (
-    <>
+    <div className='overflow-x-clip'>
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -21,7 +21,7 @@ function App() {
         <Route path='/termos' element={<Terms />} />
       </Routes>
       <CookieConsent />
-    </>
+    </div>
   );
 }
 

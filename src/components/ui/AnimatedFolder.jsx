@@ -40,12 +40,19 @@ export function AnimatedFolder({ title, description, projects, className }) {
     setHiddenCardId(projects[newIndex]?.id || null);
   };
 
+  /* Touch: tap once to reveal cards, tap card to open lightbox */
+  const handleTouchStart = () => {
+    if (!isHovered) {
+      setIsHovered(true);
+    }
+  };
+
   return (
     <>
       <div
         className={cn(
           'relative flex flex-col items-center justify-center',
-          'p-8 rounded-2xl cursor-pointer',
+          'p-6 sm:p-8 rounded-2xl cursor-pointer',
           'bg-zinc-900 border border-zinc-800',
           'transition-all duration-500 ease-out',
           'hover:shadow-2xl hover:shadow-green-500/10',
@@ -54,12 +61,13 @@ export function AnimatedFolder({ title, description, projects, className }) {
           className,
         )}
         style={{
-          minWidth: '260px',
-          minHeight: '300px',
+          minWidth: '240px',
+          minHeight: '280px',
           perspective: '1000px',
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={handleTouchStart}
       >
         {/* Background glow */}
         <div
@@ -175,7 +183,7 @@ export function AnimatedFolder({ title, description, projects, className }) {
           {description || `${projects.length} projetos`}
         </p>
 
-        {/* Hover hint */}
+        {/* Hover/touch hint — responsive text */}
         <div
           className='absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 text-xs text-zinc-600 transition-all duration-300'
           style={{
@@ -183,7 +191,8 @@ export function AnimatedFolder({ title, description, projects, className }) {
             transform: isHovered ? 'translateY(10px)' : 'translateY(0)',
           }}
         >
-          <span>Hover para explorar</span>
+          <span className='hidden sm:inline'>Hover para explorar</span>
+          <span className='sm:hidden'>Toque para explorar</span>
         </div>
       </div>
 
@@ -259,6 +268,7 @@ function ImageLightbox({
   const [isSliding, setIsSliding] = useState(false);
   const [slideDirection, setSlideDirection] = useState('right');
   const containerRef = useRef(null);
+  const touchStartRef = useRef(null);
 
   const totalProjects = projects.length;
   const hasNext = internalIndex < totalProjects - 1;
@@ -307,6 +317,19 @@ function ImageLightbox({
       onCloseComplete?.();
     }, 400);
   }, [onClose, onCloseComplete]);
+
+  /* Touch swipe support for lightbox */
+  const handleTouchStart = e => {
+    touchStartRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = e => {
+    if (touchStartRef.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartRef.current;
+    if (delta > 60) navigatePrev();
+    else if (delta < -60) navigateNext();
+    touchStartRef.current = null;
+  };
 
   useEffect(() => {
     const handleKeyDown = e => {
@@ -382,6 +405,8 @@ function ImageLightbox({
         'fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8',
       )}
       onClick={handleClose}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       style={{
         opacity: isClosing ? 0 : 1,
         transition: 'opacity 400ms cubic-bezier(0.16, 1, 0.3, 1)',
@@ -421,7 +446,7 @@ function ImageLightbox({
           navigatePrev();
         }}
         disabled={!hasPrev || isSliding}
-        className='absolute left-4 md:left-8 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-zinc-800/50 backdrop-blur-md border border-zinc-700 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-all duration-300 cursor-pointer disabled:opacity-0 disabled:pointer-events-none'
+        className='absolute left-4 md:left-8 z-50 w-12 h-12 hidden sm:flex items-center justify-center rounded-full bg-zinc-800/50 backdrop-blur-md border border-zinc-700 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-all duration-300 cursor-pointer disabled:opacity-0 disabled:pointer-events-none'
         style={{
           opacity:
             animationPhase === 'complete' && !isClosing && hasPrev ? 1 : 0,
@@ -443,7 +468,7 @@ function ImageLightbox({
           navigateNext();
         }}
         disabled={!hasNext || isSliding}
-        className='absolute right-4 md:right-8 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-zinc-800/50 backdrop-blur-md border border-zinc-700 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-all duration-300 cursor-pointer disabled:opacity-0 disabled:pointer-events-none'
+        className='absolute right-4 md:right-8 z-50 w-12 h-12 hidden sm:flex items-center justify-center rounded-full bg-zinc-800/50 backdrop-blur-md border border-zinc-700 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-all duration-300 cursor-pointer disabled:opacity-0 disabled:pointer-events-none'
         style={{
           opacity:
             animationPhase === 'complete' && !isClosing && hasNext ? 1 : 0,
@@ -507,7 +532,7 @@ function ImageLightbox({
           </div>
 
           <div
-            className='px-6 py-5 bg-zinc-900 border-t border-zinc-800'
+            className='px-4 sm:px-6 py-4 sm:py-5 bg-zinc-900 border-t border-zinc-800'
             style={{
               opacity: animationPhase === 'complete' && !isClosing ? 1 : 0,
               transform:
@@ -520,11 +545,12 @@ function ImageLightbox({
           >
             <div className='flex items-start justify-between gap-4'>
               <div className='flex-1 min-w-0'>
-                <h3 className='text-lg font-medium text-zinc-100 tracking-tight truncate h-7'>
+                <h3 className='text-base sm:text-lg font-medium text-zinc-100 tracking-tight truncate h-7'>
                   {currentProject?.title}
                 </h3>
                 <div className='flex items-center gap-3 mt-1'>
-                  <p className='text-sm text-zinc-500'>
+                  {/* Keyboard hints — hidden on mobile (touch swipe instead) */}
+                  <p className='text-sm text-zinc-500 hidden sm:block'>
                     <kbd className='px-1.5 py-0.5 mx-0.5 text-xs font-medium bg-zinc-800 text-zinc-400 rounded border border-zinc-700'>
                       ←
                     </kbd>
@@ -532,6 +558,9 @@ function ImageLightbox({
                       →
                     </kbd>{' '}
                     para navegar
+                  </p>
+                  <p className='text-xs text-zinc-500 sm:hidden'>
+                    Deslize para navegar
                   </p>
                   <div className='flex items-center gap-1.5'>
                     {projects.map((_, idx) => (

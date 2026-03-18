@@ -411,6 +411,15 @@ const cinematicPostShader = {
   `,
 };
 
+/* ─── Calcula Z da câmera baseado na largura da tela ─── */
+function getCameraZ() {
+  const vw = window.innerWidth;
+  if (vw < 480) return 7.5; // mobile — afasta bastante
+  if (vw < 768) return 6.5; // tablet pequeno
+  if (vw < 1024) return 5.8; // tablet
+  return 5; // desktop — valor original
+}
+
 export default function EtherealHero() {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
@@ -447,7 +456,7 @@ export default function EtherealHero() {
         0.1,
         100,
       );
-      camera.position.set(0, 0, 5);
+      camera.position.set(0, 0, getCameraZ());
 
       renderer = new THREE.WebGLRenderer({
         canvas: canvasRef.current,
@@ -546,6 +555,7 @@ export default function EtherealHero() {
 
       const onResize = () => {
         camera.aspect = window.innerWidth / window.innerHeight;
+        camera.position.z = getCameraZ();
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
         composer.setSize(window.innerWidth, window.innerHeight);
@@ -684,14 +694,24 @@ export default function EtherealHero() {
     };
   }, [isLoaded]);
 
-  // Mouse
+  // Mouse + Touch
   useEffect(() => {
     const onMove = e => {
       mouseRef.current.x = e.clientX / window.innerWidth;
       mouseRef.current.y = 1 - e.clientY / window.innerHeight;
     };
+    const onTouch = e => {
+      if (e.touches.length > 0) {
+        mouseRef.current.x = e.touches[0].clientX / window.innerWidth;
+        mouseRef.current.y = 1 - e.touches[0].clientY / window.innerHeight;
+      }
+    };
     window.addEventListener('mousemove', onMove);
-    return () => window.removeEventListener('mousemove', onMove);
+    window.addEventListener('touchmove', onTouch, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('touchmove', onTouch);
+    };
   }, []);
 
   return (

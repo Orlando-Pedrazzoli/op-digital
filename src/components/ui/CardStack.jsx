@@ -15,12 +15,47 @@ function signedOffset(i, active, len, loop) {
   return Math.abs(alt) < Math.abs(raw) ? alt : raw;
 }
 
+/* ─── Hook para dimensões responsivas ─── */
+function useResponsiveCardSize(baseWidth, baseHeight) {
+  const [size, setSize] = useState({ width: baseWidth, height: baseHeight });
+
+  useEffect(() => {
+    const calc = () => {
+      const vw = window.innerWidth;
+      if (vw < 480) {
+        // Mobile: card ocupa ~85% da tela, max 300px
+        const w = Math.min(300, Math.round(vw * 0.82));
+        const h = Math.round(w * (baseHeight / baseWidth));
+        setSize({ width: w, height: h });
+      } else if (vw < 768) {
+        // Tablet pequeno
+        const w = Math.min(380, Math.round(vw * 0.7));
+        const h = Math.round(w * (baseHeight / baseWidth));
+        setSize({ width: w, height: h });
+      } else if (vw < 1024) {
+        // Tablet
+        const w = Math.min(440, Math.round(vw * 0.55));
+        const h = Math.round(w * (baseHeight / baseWidth));
+        setSize({ width: w, height: h });
+      } else {
+        setSize({ width: baseWidth, height: baseHeight });
+      }
+    };
+
+    calc();
+    window.addEventListener('resize', calc);
+    return () => window.removeEventListener('resize', calc);
+  }, [baseWidth, baseHeight]);
+
+  return size;
+}
+
 export function CardStack({
   items,
   initialIndex = 0,
   maxVisible = 7,
-  cardWidth = 520,
-  cardHeight = 320,
+  cardWidth: propCardWidth = 520,
+  cardHeight: propCardHeight = 320,
   overlap = 0.48,
   spreadDeg = 48,
   perspectivePx = 1100,
@@ -43,6 +78,22 @@ export function CardStack({
   const reduceMotion = useReducedMotion();
   const len = items.length;
 
+  /* Dimensões responsivas */
+  const { width: cardWidth, height: cardHeight } = useResponsiveCardSize(
+    propCardWidth,
+    propCardHeight,
+  );
+
+  /* Parâmetros responsivos derivados */
+  const responsiveDepth =
+    cardWidth < 350 ? 80 : cardWidth < 440 ? 110 : depthPx;
+  const responsiveSpread =
+    cardWidth < 350 ? 30 : cardWidth < 440 ? 38 : spreadDeg;
+  const responsivePerspective =
+    cardWidth < 350 ? 700 : cardWidth < 440 ? 900 : perspectivePx;
+  const responsiveMaxVisible =
+    cardWidth < 350 ? 3 : cardWidth < 440 ? 5 : maxVisible;
+
   const [active, setActive] = useState(() => wrapIndex(initialIndex, len));
   const [hovering, setHovering] = useState(false);
 
@@ -55,9 +106,9 @@ export function CardStack({
     onChangeIndex?.(active, items[active]);
   }, [active]);
 
-  const maxOffset = Math.max(0, Math.floor(maxVisible / 2));
+  const maxOffset = Math.max(0, Math.floor(responsiveMaxVisible / 2));
   const cardSpacing = Math.max(10, Math.round(cardWidth * (1 - overlap)));
-  const stepDeg = maxOffset > 0 ? spreadDeg / maxOffset : 0;
+  const stepDeg = maxOffset > 0 ? responsiveSpread / maxOffset : 0;
 
   const canGoPrev = loop || active > 0;
   const canGoNext = loop || active < len - 1;
@@ -114,8 +165,8 @@ export function CardStack({
     >
       {/* Stage */}
       <div
-        className='relative w-full'
-        style={{ height: Math.max(380, cardHeight + 80) }}
+        className='relative w-full overflow-hidden'
+        style={{ height: Math.max(280, cardHeight + 80) }}
         tabIndex={0}
         onKeyDown={onKeyDown}
       >
@@ -131,7 +182,7 @@ export function CardStack({
 
         <div
           className='absolute inset-0 flex items-end justify-center'
-          style={{ perspective: `${perspectivePx}px` }}
+          style={{ perspective: `${responsivePerspective}px` }}
         >
           <AnimatePresence initial={false}>
             {items.map((item, i) => {
@@ -144,7 +195,7 @@ export function CardStack({
               const rotateZ = off * stepDeg;
               const x = off * cardSpacing;
               const y = abs * 10;
-              const z = -abs * depthPx;
+              const z = -abs * responsiveDepth;
               const isActive = off === 0;
               const scale = isActive ? activeScale : inactiveScale;
               const lift = isActive ? -activeLiftPx : 0;
