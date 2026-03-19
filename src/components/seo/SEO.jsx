@@ -2,13 +2,18 @@ import { useEffect } from 'react';
 import { siteConfig } from '@/utils/config';
 
 /**
- * Componente SEO — atualiza meta tags e JSON-LD via DOM nativo (React 19 compatível)
- * @param {Object} props
- * @param {string} props.title - Título da página
- * @param {string} props.description - Descrição meta
- * @param {string} props.path - Path da URL (ex: "/contato")
- * @param {string} props.type - Tipo OG (default: "website")
- * @param {Object|null} props.jsonLd - Structured data adicional (JSON-LD)
+ * SEO Component — Atualiza meta tags via DOM
+ *
+ * Funciona em dois modos:
+ * 1. Client-side: atualiza meta tags dinamicamente por rota
+ * 2. Pre-render: durante o build, o HTML capturado ja tera as meta tags corretas
+ *
+ * @param {string} title - Titulo da pagina
+ * @param {string} description - Descricao meta
+ * @param {string} path - Path da URL (ex: "/servicos")
+ * @param {string} type - Tipo OG (default: "website")
+ * @param {Object|null} jsonLd - Structured data adicional (JSON-LD)
+ * @param {string|null} image - Imagem OG custom (default: og-image.jpg)
  */
 export default function SEO({
   title,
@@ -16,19 +21,19 @@ export default function SEO({
   path = '',
   type = 'website',
   jsonLd = null,
+  image = null,
 }) {
   const fullTitle = title
     ? `${title} | ${siteConfig.name}`
     : siteConfig.seo.defaultTitle;
-
   const url = `${siteConfig.url}${path}`;
-  const ogImage = `${siteConfig.url}${siteConfig.seo.ogImage}`;
+  const ogImage = image || `${siteConfig.url}${siteConfig.seo.ogImage}`;
 
   useEffect(() => {
-    // — Título
+    // -- Titulo
     document.title = fullTitle;
 
-    // — Helper: criar ou atualizar meta tag
+    // -- Helper: criar ou atualizar meta tag
     const setMeta = (attr, key, content) => {
       let el = document.querySelector(`meta[${attr}="${key}"]`);
       if (!el) {
@@ -39,7 +44,22 @@ export default function SEO({
       el.setAttribute('content', content);
     };
 
-    // — Meta tags SEO
+    // -- Helper: criar ou atualizar link tag
+    const setLink = (rel, href, attrs = {}) => {
+      const selector = Object.entries(attrs)
+        .map(([k, v]) => `[${k}="${v}"]`)
+        .join('');
+      let el = document.querySelector(`link[rel="${rel}"]${selector}`);
+      if (!el) {
+        el = document.createElement('link');
+        el.setAttribute('rel', rel);
+        Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+        document.head.appendChild(el);
+      }
+      el.setAttribute('href', href);
+    };
+
+    // -- Meta tags SEO
     setMeta('name', 'description', description);
     setMeta(
       'name',
@@ -47,7 +67,7 @@ export default function SEO({
       'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     );
 
-    // — Open Graph
+    // -- Open Graph
     setMeta('property', 'og:type', type);
     setMeta('property', 'og:title', fullTitle);
     setMeta('property', 'og:description', description);
@@ -60,7 +80,7 @@ export default function SEO({
     setMeta('property', 'og:image:alt', fullTitle);
     setMeta('property', 'og:locale', siteConfig.seo.locale);
 
-    // — Twitter / X
+    // -- Twitter / X
     setMeta('name', 'twitter:card', 'summary_large_image');
     setMeta('name', 'twitter:site', siteConfig.social.instagram);
     setMeta('name', 'twitter:creator', siteConfig.social.instagram);
@@ -69,16 +89,14 @@ export default function SEO({
     setMeta('name', 'twitter:image', ogImage);
     setMeta('name', 'twitter:image:alt', fullTitle);
 
-    // — Canonical
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', url);
+    // -- Canonical
+    setLink('canonical', url);
 
-    // — JSON-LD dinâmico (para páginas futuras)
+    // -- Hreflang (pt-BR principal + x-default)
+    setLink('alternate', url, { hreflang: 'pt-BR' });
+    setLink('alternate', url, { hreflang: 'x-default' });
+
+    // -- JSON-LD dinamico (para paginas que precisam de structured data custom)
     if (jsonLd) {
       const id = 'dynamic-jsonld';
       let script = document.getElementById(id);

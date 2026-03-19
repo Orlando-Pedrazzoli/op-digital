@@ -1,5 +1,12 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/servicos", "destination": "/servicos/index.html" },
+    { "source": "/sobre", "destination": "/sobre/index.html" },
+    { "source": "/faq", "destination": "/faq/index.html" },
+    { "source": "/privacidade", "destination": "/privacidade/index.html" },
+    { "source": "/termos", "destination": "/termos/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -44,6 +51,15 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=2592000, s-maxage=2592000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, s-maxage=31536000, immutable"
         }
       ]
     }

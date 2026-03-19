@@ -116,7 +116,7 @@ export default function Navbar() {
                 height={36}
               />
             </div>
-            <span className='font-sans text-xl font-bold text-white tracking-tight'>
+            <span className='font-serif text-[22px] font-normal text-white tracking-tight'>
               {siteConfig.name}
             </span>
           </Link>
@@ -215,7 +215,7 @@ export default function Navbar() {
       >
         {/* Panel header */}
         <div className='flex items-center justify-between px-6 h-[72px] border-b border-white/[0.06]'>
-          <span className='font-display text-base font-semibold text-white tracking-tight'>
+          <span className='font-serif text-lg font-normal text-white tracking-tight'>
             Menu
           </span>
           <button

@@ -1,6 +1,13 @@
 # Pedrazzoli Digital — robots.txt
+
 User-agent: *
 Allow: /
+Allow: /servicos
+Allow: /sobre
+Allow: /faq
+
+# Bloqueia rotas internas sem valor SEO
+Disallow: /assets/
 
 # Sitemap
 Sitemap: https://pedrazzolidigital.com/sitemap.xml
