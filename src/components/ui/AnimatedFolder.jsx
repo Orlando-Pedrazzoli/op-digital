@@ -53,7 +53,7 @@ export function AnimatedFolder({ title, description, projects, className }) {
         className={cn(
           'relative flex flex-col items-center justify-center',
           'p-6 sm:p-8 rounded-2xl cursor-pointer',
-          'bg-zinc-900 border border-zinc-800',
+          'bg-[#1a2042] border border-white/[0.08]',
           'transition-all duration-500 ease-out',
           'hover:shadow-2xl hover:shadow-green-500/10',
           'hover:border-green-600/30',
@@ -220,7 +220,7 @@ const ProjectCard = forwardRef(
         ref={ref}
         className={cn(
           'absolute w-20 h-28 rounded-lg overflow-hidden shadow-xl',
-          'bg-zinc-800 border border-zinc-700',
+          'bg-[#212952] border border-white/[0.08]',
           'cursor-pointer hover:ring-2 hover:ring-green-500/50',
           isSelected && 'opacity-0',
         )}

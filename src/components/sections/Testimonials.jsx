@@ -22,7 +22,7 @@ function useResponsiveCarousel() {
         const cw = Math.min(220, vw - 80);
         setDims({
           cardWidth: cw,
-          cardHeight: 220,
+          cardHeight: 260,
           zDepth: 140,
           containerWidth: cw * 1.4,
           perspective: 600,

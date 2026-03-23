@@ -46,15 +46,15 @@ export default function BusinessTypes() {
                     </span>
 
                     {/* Content — reduced hover shift on mobile */}
-                    <div className='relative z-20 left-0 p-[24px_24px] sm:p-[24px_30px] bg-[rgba(0,0,0,0.45)] backdrop-blur-[12px] shadow-lg rounded-lg text-white transition-all duration-500 sm:group-hover:left-[-25px] sm:group-hover:p-[40px_30px]'>
+                    <div className='relative z-20 left-0 p-[24px_24px] sm:p-[24px_30px] bg-[rgba(19,24,52,0.85)] backdrop-blur-[12px] shadow-lg rounded-lg text-white transition-all duration-500 sm:group-hover:left-[-25px] sm:group-hover:p-[40px_30px]'>
                       <h2
-                        className='text-xl sm:text-2xl font-bold mb-3'
-                        style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
+                        className='text-lg sm:text-xl font-semibold mb-3'
+                        style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
                       >
                         {name}
                       </h2>
                       <p
-                        className='text-sm sm:text-base leading-relaxed text-white/90'
+                        className='text-[13px] sm:text-sm leading-relaxed text-white/80'
                         style={{ textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
                       >
                         {desc}
