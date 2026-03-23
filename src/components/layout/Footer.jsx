@@ -18,7 +18,7 @@ export default function Footer() {
   const { openPreferences } = useCookieConsent();
 
   return (
-    <footer className='pt-16 pb-8 px-6 border-t border-zinc-200 dark:border-zinc-800 bg-[#F8F7F4] dark:bg-[#0C0C0F]'>
+    <footer className='pt-16 pb-8 px-6 border-t border-zinc-200 dark:border-zinc-800 bg-[#F8F7F4] dark:bg-[#131834]'>
       <div className='max-w-300 mx-auto'>
         {/* Top grid */}
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 mb-14'>

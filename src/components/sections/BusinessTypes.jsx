@@ -5,7 +5,7 @@ import { getBusinessWhatsApp } from '@/utils/whatsapp';
 
 export default function BusinessTypes() {
   return (
-    <section id='solucoes' className='py-24 px-6 bg-white dark:bg-zinc-950'>
+    <section id='solucoes' className='py-24 px-6 bg-white dark:bg-[#131834]'>
       <div className='max-w-7xl mx-auto'>
         <SectionHeader
           label='Soluções para seu Negócio'

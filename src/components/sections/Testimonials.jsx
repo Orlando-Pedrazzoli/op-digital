@@ -105,7 +105,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id='depoimentos' className='py-24 px-6 bg-zinc-950'>
+    <section id='depoimentos' className='py-24 px-6 bg-[#131834]'>
       <div className='max-w-300 mx-auto'>
         <SectionHeader
           label='Depoimentos'

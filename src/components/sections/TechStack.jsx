@@ -10,7 +10,7 @@ import FadeIn from '@/components/ui/FadeIn';
 
 export default function TechStack() {
   return (
-    <section className='py-20 px-6 bg-[#F8F7F4] dark:bg-[#0C0C0F]'>
+    <section className='py-20 px-6 bg-[#F8F7F4] dark:bg-[#131834]'>
       <div className='max-w-7xl mx-auto'>
         <SectionHeader
           label='Tecnologias'

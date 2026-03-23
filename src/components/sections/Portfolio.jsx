@@ -38,7 +38,7 @@ export default function Portfolio() {
   return (
     <section
       id='portfolio'
-      className='py-24 px-6 bg-[#F8F7F4] dark:bg-[#0C0C0F]'
+      className='py-24 px-6 bg-[#F8F7F4] dark:bg-[#131834]'
     >
       <div className='max-w-300 mx-auto'>
         <SectionHeader

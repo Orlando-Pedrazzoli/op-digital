@@ -53,7 +53,7 @@ const COLOR_PALETTE = {
   secondary: '#22c55e',
   tertiary: '#059669',
   accent: '#4ade80',
-  dark: '#141735',
+  dark: '#171d3a',
 };
 
 const paletteGLSL = `

@@ -95,7 +95,7 @@ export default function Navbar() {
           fixed top-0 inset-x-0 z-50 transition-all duration-300
           ${
             scrolled
-              ? 'bg-[#141735]/95 backdrop-blur-2xl border-b border-white/[0.06] shadow-lg shadow-black/20'
+              ? 'bg-[#171d3a]/95 backdrop-blur-2xl border-b border-white/[0.06] shadow-lg shadow-black/20'
               : 'bg-transparent'
           }
         `}
@@ -116,7 +116,7 @@ export default function Navbar() {
                 height={36}
               />
             </div>
-            <span className='font-serif text-[22px] font-normal text-white tracking-tight'>
+            <span className='font-serif text-[22px] font-normal text-white tracking-normal'>
               {siteConfig.name}
             </span>
           </Link>
@@ -206,7 +206,7 @@ export default function Navbar() {
         aria-label='Menu de navegação'
         className={`
           fixed top-0 right-0 z-[999] h-full w-full max-w-[340px]
-          bg-[#141735]/98 backdrop-blur-2xl
+          bg-[#171d3a]/98 backdrop-blur-2xl
           border-l border-white/[0.06]
           transition-transform duration-300 ease-out lg:hidden
           flex flex-col
