@@ -6,7 +6,7 @@ import { faqItems } from '@/data/faq';
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
   return (
-    <section id='faq' className='py-24 px-6 bg-[#F8F7F4] dark:bg-[#0C0C0F]'>
+    <section id='faq' className='py-24 px-6 bg-[#F8F7F4] dark:bg-[#131834]'>
       <div className='max-w-175 mx-auto'>
         <SectionHeader label='Dúvidas' title='Perguntas <em>frequentes.</em>' />
         <div>

@@ -7,7 +7,7 @@ import { getPlanWhatsApp } from '@/utils/whatsapp';
 
 export default function Plans() {
   return (
-    <section id='planos' className='py-24 px-6 bg-white dark:bg-zinc-950'>
+    <section id='planos' className='py-24 px-6 bg-white dark:bg-[#131834]'>
       <div className='max-w-300 mx-auto'>
         <SectionHeader
           label='Investimento'

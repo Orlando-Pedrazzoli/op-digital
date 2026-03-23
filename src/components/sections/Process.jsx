@@ -5,7 +5,7 @@ import { processSteps } from '@/data/portfolio';
 const icons = [MessageCircle, Briefcase, Code, Rocket];
 export default function Process() {
   return (
-    <section id='processo' className='py-24 px-6 bg-white dark:bg-zinc-950'>
+    <section id='processo' className='py-24 px-6 bg-white dark:bg-[#131834]'>
       <div className='max-w-300 mx-auto'>
         <SectionHeader
           label='Como Funciona'

@@ -34,7 +34,7 @@ const highlights = [
 
 export default function AboutMe() {
   return (
-    <section id='sobre' className='py-24 px-6 bg-[#F8F7F4] dark:bg-[#0C0C0F]'>
+    <section id='sobre' className='py-24 px-6 bg-[#F8F7F4] dark:bg-[#131834]'>
       <div className='max-w-300 mx-auto'>
         <FadeIn>
           <div className='max-w-260 mx-auto flex flex-col lg:flex-row gap-14 items-center'>

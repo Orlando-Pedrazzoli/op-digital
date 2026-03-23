@@ -18,17 +18,17 @@ export default function CTABanner({
 }) {
   const variants = {
     light: {
-      bg: 'bg-[#F8F7F4] dark:bg-[#0C0C0F]',
+      bg: 'bg-[#F8F7F4] dark:bg-[#131834]]',
       card: 'bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800',
       text: 'text-zinc-900 dark:text-zinc-100',
     },
     dark: {
-      bg: 'bg-white dark:bg-zinc-950',
+      bg: 'bg-white dark:bg-[#131834]',
       card: 'bg-zinc-900 dark:bg-zinc-800 border border-zinc-800 dark:border-zinc-700',
       text: 'text-white',
     },
     green: {
-      bg: 'bg-white dark:bg-zinc-950',
+      bg: 'bg-white dark:bg-[#131834]',
       card: 'bg-green-600 dark:bg-green-700 border border-green-500 dark:border-green-600',
       text: 'text-white',
     },

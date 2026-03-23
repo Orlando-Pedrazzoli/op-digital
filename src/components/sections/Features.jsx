@@ -5,7 +5,7 @@ import { featuresFolders } from '@/data/features';
 
 export default function Features() {
   return (
-    <section id='funcionalidades' className='py-24 px-6 bg-zinc-950'>
+    <section id='funcionalidades' className='py-24 px-6 bg-[#131834]'>
       <div className='max-w-7xl mx-auto'>
         <SectionHeader
           label='Funcionalidades'

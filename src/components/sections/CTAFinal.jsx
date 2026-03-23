@@ -73,7 +73,7 @@ export default function CTAFinal() {
   const inputTheme = `${inputLight} bg-zinc-50 dark:bg-white/6 border border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-white/30 focus:border-green-500 dark:focus:border-green-500 focus:bg-white dark:focus:bg-white/8 focus:ring-1 focus:ring-green-500/30`;
 
   return (
-    <section id='contato' className='py-24 px-6 bg-[#F8F7F4] dark:bg-[#0C0C0F]'>
+    <section id='contato' className='py-24 px-6 bg-[#F8F7F4] dark:bg-[#131834]'>
       <FadeIn>
         <div className='max-w-220 mx-auto rounded-3xl py-16 px-8 md:px-14 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-[0_20px_60px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.3)] relative overflow-hidden'>
           {/* BG decorations */}
