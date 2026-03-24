@@ -5,12 +5,12 @@ import { siteConfig } from '@/utils/config';
 import { getWhatsAppUrl } from '@/utils/whatsapp';
 import Button from '@/components/ui/Button';
 
-/* ─── link config ─── */
+/* --- link config --- */
 const navLinks = [
-  { label: 'Portfólio', href: '#portfolio', type: 'anchor' },
-  { label: 'Serviços', href: '/servicos', type: 'page' },
+  { label: 'Portfolio', href: '/portfolio', type: 'page' },
+  { label: 'Servicos', href: '/servicos', type: 'page' },
   { label: 'Sobre', href: '/sobre', type: 'page' },
-  { label: 'Planos', href: '#planos', type: 'anchor' },
+  { label: 'Planos', href: '/planos', type: 'page' },
   { label: 'FAQ', href: '/faq', type: 'page' },
 ];
 
@@ -21,14 +21,14 @@ export default function Navbar() {
   const navigate = useNavigate();
   const isHome = location.pathname === '/';
 
-  /* ─── scroll detection ─── */
+  /* --- scroll detection --- */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* ─── lock body when mobile menu is open ─── */
+  /* --- lock body when mobile menu is open --- */
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => {
@@ -36,12 +36,12 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
-  /* ─── close mobile menu on route change ─── */
+  /* --- close mobile menu on route change --- */
   useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname]);
 
-  /* ─── close on Escape key ─── */
+  /* --- close on Escape key --- */
   useEffect(() => {
     const onKey = e => {
       if (e.key === 'Escape') setMobileOpen(false);
@@ -49,20 +49,6 @@ export default function Navbar() {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
-
-  const handleAnchorClick = useCallback(
-    (e, href) => {
-      e.preventDefault();
-      setMobileOpen(false);
-      if (isHome) {
-        const el = document.querySelector(href);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        navigate('/' + href);
-      }
-    },
-    [isHome, navigate],
-  );
 
   const handlePageClick = useCallback(
     href => {
@@ -80,17 +66,15 @@ export default function Navbar() {
   };
 
   const isActive = link => {
-    if (link.type === 'page') return location.pathname === link.href;
-    if (link.type === 'anchor' && isHome) return false; // anchors don't get "active" state
-    return false;
+    return location.pathname === link.href;
   };
 
   return (
     <>
-      {/* ════════════ NAVBAR ════════════ */}
+      {/* ======== NAVBAR ======== */}
       <nav
         role='navigation'
-        aria-label='Navegação principal'
+        aria-label='Navegacao principal'
         className={`
           fixed top-0 inset-x-0 z-50 transition-all duration-300
           ${
@@ -101,7 +85,7 @@ export default function Navbar() {
         `}
       >
         <div className='max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between'>
-          {/* ── Logo ── */}
+          {/* -- Logo -- */}
           <Link
             to='/'
             onClick={handleLogoClick}
@@ -121,7 +105,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* ── Desktop Links ── */}
+          {/* -- Desktop Links -- */}
           <div className='hidden lg:flex items-center gap-1'>
             {navLinks.map(link => {
               const active = isActive(link);
@@ -130,36 +114,23 @@ export default function Navbar() {
                 transition-colors duration-200 no-underline
               `;
 
-              if (link.type === 'page') {
-                return (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className={`${baseClass} ${
-                      active
-                        ? 'text-green-400 bg-green-400/10'
-                        : 'text-zinc-400 hover:text-white hover:bg-white/[0.05]'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              }
-
               return (
-                <a
+                <Link
                   key={link.href}
-                  href={isHome ? link.href : `/${link.href}`}
-                  onClick={e => handleAnchorClick(e, link.href)}
-                  className={`${baseClass} text-zinc-400 hover:text-white hover:bg-white/[0.05]`}
+                  to={link.href}
+                  className={`${baseClass} ${
+                    active
+                      ? 'text-green-400 bg-green-400/10'
+                      : 'text-zinc-400 hover:text-white hover:bg-white/[0.05]'
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               );
             })}
           </div>
 
-          {/* ── Desktop CTA ── */}
+          {/* -- Desktop CTA -- */}
           <div className='hidden lg:flex items-center'>
             <Button
               href={getWhatsAppUrl()}
@@ -172,7 +143,7 @@ export default function Navbar() {
             </Button>
           </div>
 
-          {/* ── Mobile Hamburger ── */}
+          {/* -- Mobile Hamburger -- */}
           <button
             onClick={() => setMobileOpen(true)}
             className='lg:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-white/[0.06] border border-white/[0.08] text-white cursor-pointer transition-colors hover:bg-white/[0.1]'
@@ -185,7 +156,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ════════════ MOBILE MENU ════════════ */}
+      {/* ======== MOBILE MENU ======== */}
 
       {/* Backdrop */}
       <div
@@ -203,7 +174,7 @@ export default function Navbar() {
         id='mobile-menu'
         role='dialog'
         aria-modal='true'
-        aria-label='Menu de navegação'
+        aria-label='Menu de navegacao'
         className={`
           fixed top-0 right-0 z-[999] h-full w-full max-w-[340px]
           bg-[#171d3a]/98 backdrop-blur-2xl
@@ -246,33 +217,17 @@ export default function Navbar() {
                 }
               `;
 
-              if (link.type === 'page') {
-                return (
-                  <li key={link.href}>
-                    <Link
-                      to={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className={linkClass}
-                      style={{ animationDelay: `${i * 50}ms` }}
-                    >
-                      {link.label}
-                      <ArrowRight size={16} className='opacity-40' />
-                    </Link>
-                  </li>
-                );
-              }
-
               return (
                 <li key={link.href}>
-                  <a
-                    href={isHome ? link.href : `/${link.href}`}
-                    onClick={e => handleAnchorClick(e, link.href)}
+                  <Link
+                    to={link.href}
+                    onClick={() => setMobileOpen(false)}
                     className={linkClass}
                     style={{ animationDelay: `${i * 50}ms` }}
                   >
                     {link.label}
                     <ArrowRight size={16} className='opacity-40' />
-                  </a>
+                  </Link>
                 </li>
               );
             })}

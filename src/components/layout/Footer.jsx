@@ -1,16 +1,15 @@
 import { Mail, Phone, Instagram, Cookie } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { siteConfig } from '@/utils/config';
 import { getWhatsAppUrl } from '@/utils/whatsapp';
 import { useCookieConsent } from '@/contexts/CookieProvider';
 
 const navLinks = [
-  { label: 'Portfólio', href: '/#portfolio' },
-  { label: 'Serviços', href: '/servicos' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Servicos', href: '/servicos' },
   { label: 'Sobre', href: '/sobre' },
-  { label: 'Planos', href: '/#planos' },
+  { label: 'Planos', href: '/planos' },
   { label: 'FAQ', href: '/faq' },
-  { label: 'Contato', href: '/#contato' },
 ];
 
 export default function Footer() {
@@ -37,34 +36,25 @@ export default function Footer() {
               </span>
             </Link>
             <p className='text-[13px] text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-65'>
-              Sites e lojas online com código próprio, feitos para converter.
-              Sem templates, sem limitações.
+              Sites e lojas online com codigo proprio, feitos para converter.
+              Sem templates, sem limitacoes.
             </p>
           </div>
 
           {/* Navigation */}
           <div>
             <h4 className='text-[13px] font-semibold text-zinc-900 dark:text-zinc-100 uppercase tracking-wider mb-4'>
-              Navegação
+              Navegacao
             </h4>
             <ul className='space-y-2.5 list-none p-0 m-0'>
               {navLinks.map(link => (
                 <li key={link.href}>
-                  {link.href.startsWith('/') && !link.href.startsWith('/#') ? (
-                    <Link
-                      to={link.href}
-                      className='text-[13px] text-zinc-500 dark:text-zinc-400 no-underline hover:text-green-600 dark:hover:text-green-400 transition-colors'
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className='text-[13px] text-zinc-500 dark:text-zinc-400 no-underline hover:text-green-600 dark:hover:text-green-400 transition-colors'
-                    >
-                      {link.label}
-                    </a>
-                  )}
+                  <Link
+                    to={link.href}
+                    className='text-[13px] text-zinc-500 dark:text-zinc-400 no-underline hover:text-green-600 dark:hover:text-green-400 transition-colors'
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -81,7 +71,7 @@ export default function Footer() {
                   to='/privacidade'
                   className='text-[13px] text-zinc-500 dark:text-zinc-400 no-underline hover:text-green-600 dark:hover:text-green-400 transition-colors'
                 >
-                  Política de Privacidade
+                  Politica de Privacidade
                 </Link>
               </li>
               <li>
@@ -146,10 +136,11 @@ export default function Footer() {
         {/* Bottom */}
         <div className='border-t border-zinc-200 dark:border-zinc-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3'>
           <p className='text-[11px] text-zinc-400 dark:text-zinc-500'>
-            © {currentYear} {siteConfig.name}. Todos os direitos reservados.
+            &copy; {currentYear} {siteConfig.name}. Todos os direitos
+            reservados.
           </p>
           <p className='text-[11px] text-zinc-400 dark:text-zinc-500'>
-            Feito com código próprio — zero templates.
+            Feito com codigo proprio — zero templates.
           </p>
         </div>
       </div>

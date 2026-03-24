@@ -7,6 +7,8 @@ import Sobre from '@/pages/Sobre';
 import Faq from '@/pages/Faq';
 import Privacy from '@/pages/Privacy';
 import Terms from '@/pages/Terms';
+import PortfolioPage from '@/pages/PortfolioPage';
+import PlanosPage from '@/pages/PlanosPage';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/portfolio' element={<PortfolioPage />} />
+        <Route path='/planos' element={<PlanosPage />} />
         <Route path='/servicos' element={<Servicos />} />
         <Route path='/sobre' element={<Sobre />} />
         <Route path='/faq' element={<Faq />} />

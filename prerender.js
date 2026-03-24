@@ -23,7 +23,16 @@ const DIST = resolve(__dirname, 'dist');
 const PORT = 4173;
 
 // Todas as rotas do site
-const ROUTES = ['/', '/servicos', '/sobre', '/faq', '/privacidade', '/termos'];
+const ROUTES = [
+  '/',
+  '/portfolio',
+  '/planos',
+  '/servicos',
+  '/sobre',
+  '/faq',
+  '/privacidade',
+  '/termos',
+];
 
 // Servidor estatico que serve ficheiros reais do dist/
 // So faz fallback para index.html quando o ficheiro NAO existe
