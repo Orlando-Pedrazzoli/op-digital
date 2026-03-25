@@ -524,5 +524,130 @@
 
   "common": {
     "backToHome": "Back to home"
+  },
+
+  "privacy": {
+    "label": "Legal",
+    "heading": "Privacy",
+    "headingHighlight": "Policy",
+    "lastUpdate": "March 6, 2026",
+    "lastUpdateLabel": "Last updated:",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "content": "<p><strong class='text-zinc-900 dark:text-zinc-200'>Pedrazzoli Digital</strong>, operated by Orlando Pedrazzoli, based in Lisbon, Portugal, values and respects the privacy of its visitors and clients. This Privacy Policy describes how we collect, use, store and protect your personal data when you access our website (https://pedrazzolidigital.com).</p><p>This policy complies with Brazil's General Data Protection Law (LGPD — Law No. 13.709/2018) and the European Union's General Data Protection Regulation (GDPR).</p>"
+      },
+      {
+        "title": "2. Data Controller",
+        "content": "<p><strong class='text-zinc-900 dark:text-zinc-200'>Controller:</strong> Orlando Pedrazzoli<br/><strong class='text-zinc-900 dark:text-zinc-200'>Email:</strong> <a href='mailto:pedrazzoliorlando@gmail.com' class='text-green-600 dark:text-green-400 hover:underline no-underline'>pedrazzoliorlando@gmail.com</a><br/><strong class='text-zinc-900 dark:text-zinc-200'>Location:</strong> Lisbon, Portugal</p>"
+      },
+      {
+        "title": "3. Data We Collect",
+        "content": "<p>We may collect the following types of personal data:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Data you provide:</strong> Name, email, WhatsApp number, business type and message — when voluntarily filled in the contact form.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Automatically collected data:</strong> IP address (anonymized), browser type, operating system, pages visited, time spent, traffic source and interaction data — collected through analytics cookies, only with your prior consent.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Cookie data:</strong> Theme preferences (light/dark), cookie consent status and session identifiers. For more details, see section 7 (Cookies).</p>"
+      },
+      {
+        "title": "4. Purposes of Processing",
+        "content": "<p>We use your personal data to:</p><p>Respond to contact requests and send quotes; improve the browsing experience on the site; analyze site performance and traffic (with consent); comply with legal and tax obligations; and communicate updates about ongoing projects.</p>"
+      },
+      {
+        "title": "5. Legal Basis for Processing (LGPD Art. 7)",
+        "content": "<p>Personal data processing is carried out based on:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Consent</strong> (Art. 7, I) — for analytics and marketing cookies. You can revoke your consent at any time.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Contract execution or preliminary procedures</strong> (Art. 7, V) — to respond to your contact form and send proposals.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Legitimate interest</strong> (Art. 7, IX) — to improve our services and site experience, when it does not override your rights.</p>"
+      },
+      {
+        "title": "6. Data Sharing",
+        "content": "<p>Your data may be shared with:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>EmailJS</strong> — for contact form processing (data transits encrypted).</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Google Analytics</strong> — for traffic analysis (only with your consent, anonymized data).</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Vercel</strong> — for site hosting (basic access logs).</p><p>We do not sell, rent or share your personal data with third parties for marketing purposes without your explicit consent.</p>"
+      },
+      {
+        "title": "7. Cookies",
+        "content": "<p>We use cookies for essential site functionality and, with your consent, for traffic analysis. When you first visit our site, a cookie banner will be presented where you can accept, decline or customize your preferences.</p><p>The types of cookies we use are:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Essential:</strong> Necessary for the site to function (theme preferences, consent status). Cannot be disabled.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Analytics:</strong> Google Analytics for aggregated traffic data. Only activated with your consent.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Marketing:</strong> Social media pixels for targeted advertising. Only activated with your consent.</p>"
+      },
+      {
+        "title": "8. Your Rights (LGPD Art. 18 / GDPR Art. 15-22)",
+        "content": "<p>You have the right to:</p><p>Confirm the existence of data processing; access your personal data; correct incomplete or outdated data; request anonymization, blocking or deletion of unnecessary data; request data portability; revoke consent at any time; and be informed about entities with whom your data has been shared.</p><p>To exercise any of these rights, contact us at <a href='mailto:pedrazzoliorlando@gmail.com' class='text-green-600 dark:text-green-400 hover:underline no-underline'>pedrazzoliorlando@gmail.com</a>. We will respond within 15 business days.</p>"
+      },
+      {
+        "title": "9. Data Retention",
+        "content": "<p>Personal data provided via the contact form is retained for the time necessary to fulfill your request and, afterwards, for up to 5 years for tax compliance. Cookie data is retained according to each cookie's validity (maximum 13 months for analytics cookies).</p>"
+      },
+      {
+        "title": "10. Security",
+        "content": "<p>We adopt technical and organizational measures to protect your data against unauthorized access, loss or destruction. The site uses HTTPS protocol (SSL/TLS encryption) and form data is transmitted encrypted via EmailJS.</p>"
+      },
+      {
+        "title": "11. International Transfer",
+        "content": "<p>Some of our service providers (EmailJS, Google Analytics, Vercel) may process data on servers outside Brazil and Portugal. In these cases, we ensure that data is treated in compliance with LGPD and GDPR, based on standard contractual clauses or adequacy decisions.</p>"
+      },
+      {
+        "title": "12. Minors",
+        "content": "<p>Our site and services are not directed at minors under 18 years of age. We do not intentionally collect data from minors. If we become aware that data from a minor has been collected, we will proceed with its immediate deletion.</p>"
+      },
+      {
+        "title": "13. Changes to This Policy",
+        "content": "<p>This Privacy Policy may be updated periodically. We recommend that you check it regularly. The date of the last update is indicated at the top of this document.</p>"
+      },
+      {
+        "title": "14. Contact and Complaints",
+        "content": "<p>For questions, requests or complaints about the processing of your data, contact us:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Email:</strong> <a href='mailto:pedrazzoliorlando@gmail.com' class='text-green-600 dark:text-green-400 hover:underline no-underline'>pedrazzoliorlando@gmail.com</a><br/><strong class='text-zinc-900 dark:text-zinc-200'>WhatsApp:</strong> <a href='https://wa.me/351912164220' class='text-green-600 dark:text-green-400 hover:underline no-underline' target='_blank' rel='noopener noreferrer'>+351 912 164 220</a></p><p>If you consider that the processing of your data is not in compliance, you may file a complaint with Brazil's National Data Protection Authority (ANPD) or Portugal's National Data Protection Commission (CNPD).</p>"
+      }
+    ],
+    "manageCookiesBtn": "manage your cookie preferences"
+  },
+
+  "terms": {
+    "label": "Legal",
+    "heading": "Terms of",
+    "headingHighlight": "Use",
+    "lastUpdate": "March 6, 2026",
+    "lastUpdateLabel": "Last updated:",
+    "sections": [
+      {
+        "title": "1. Acceptance of Terms",
+        "content": "<p>By accessing and using the site <strong class='text-zinc-900 dark:text-zinc-200'>https://pedrazzolidigital.com</strong>, operated by <strong class='text-zinc-900 dark:text-zinc-200'>Pedrazzoli Digital</strong> (Orlando Pedrazzoli), you fully agree to these Terms of Use. If you do not agree with any of the terms, we ask that you do not use the site.</p>"
+      },
+      {
+        "title": "2. Description of Services",
+        "content": "<p>Pedrazzoli Digital offers web development services, including institutional websites, online stores (e-commerce), custom web systems and digital project maintenance. The site serves as a showcase for our services and a contact channel with potential clients.</p>"
+      },
+      {
+        "title": "3. Use of the Site",
+        "content": "<p>By using this site, you agree not to use it for illegal or unauthorized purposes; not to attempt to access restricted areas of the site or our servers; not to transmit viruses, malware or any malicious code; not to reproduce, duplicate or copy the site content without prior authorization; and to provide truthful information when filling out the contact form.</p>"
+      },
+      {
+        "title": "4. Intellectual Property",
+        "content": "<p>All site content — including texts, design, source code, images, logos, icons and the Pedrazzoli Digital brand — is the exclusive property of Orlando Pedrazzoli and is protected by intellectual property laws of Brazil and Portugal.</p><p>Reproduction, distribution, modification or commercial use of any site content without prior written authorization is prohibited. Code for projects developed for clients is governed by specific service contracts.</p>"
+      },
+      {
+        "title": "5. Portfolio and Projects",
+        "content": "<p>The projects presented in the portfolio section are real and represent work developed for Pedrazzoli Digital clients. Information, metrics and descriptions are presented with the consent of the respective clients. Links to client sites are provided for reference — we are not responsible for the content of third-party sites.</p>"
+      },
+      {
+        "title": "6. Contact Form",
+        "content": "<p>Information submitted through the contact form is used exclusively to respond to your request and send commercial proposals. Data is processed according to our <a href='/privacidade' class='text-green-600 dark:text-green-400 hover:underline no-underline font-medium'>Privacy Policy</a>. We do not use this data for newsletters or unsolicited communications.</p>"
+      },
+      {
+        "title": "7. Prices and Payments",
+        "content": "<p>The values presented on the site are referential (starting from). The final value of each project is defined in a personalized commercial proposal after analyzing the client's specific needs. Payment terms, deadlines and conditions are established in individual service contracts.</p>"
+      },
+      {
+        "title": "8. Limitation of Liability",
+        "content": "<p>Pedrazzoli Digital strives to keep the site available and with updated information, but we do not guarantee uninterrupted availability or the total absence of errors. We are not responsible for indirect damages, data loss or lost profits resulting from the use or inability to use the site.</p><p>The site may contain links to third-party sites. We are not responsible for the content, privacy policies or practices of any third-party site.</p>"
+      },
+      {
+        "title": "9. Availability",
+        "content": "<p>We reserve the right to modify, suspend or discontinue any aspect of the site at any time, without prior notice. We may also perform scheduled maintenance that may result in temporary unavailability.</p>"
+      },
+      {
+        "title": "10. Changes to Terms",
+        "content": "<p>These Terms of Use may be changed at any time. Changes take effect immediately after publication on the site. Continued use of the site after changes implies acceptance of the new terms. We recommend that you check this page periodically.</p>"
+      },
+      {
+        "title": "11. Applicable Law",
+        "content": "<p>These Terms of Use are governed by the laws of the Portuguese Republic and Brazilian legislation (Consumer Defense Code and Law No. 13.709/2018 — LGPD), as applicable to the user's domicile. Any disputes shall be submitted to the courts of Lisbon, Portugal, or the consumer's domicile, as applicable.</p>"
+      },
+      {
+        "title": "12. Contact",
+        "content": "<p>For questions related to these Terms of Use, contact us:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Email:</strong> <a href='mailto:pedrazzoliorlando@gmail.com' class='text-green-600 dark:text-green-400 hover:underline no-underline'>pedrazzoliorlando@gmail.com</a><br/><strong class='text-zinc-900 dark:text-zinc-200'>WhatsApp:</strong> <a href='https://wa.me/351912164220' class='text-green-600 dark:text-green-400 hover:underline no-underline' target='_blank' rel='noopener noreferrer'>+351 912 164 220</a></p>"
+      }
+    ]
   }
 }

@@ -524,5 +524,130 @@
 
   "common": {
     "backToHome": "Voltar ao inicio"
+  },
+
+  "privacy": {
+    "label": "Legal",
+    "heading": "Politica de",
+    "headingHighlight": "Privacidade",
+    "lastUpdate": "06 de Marco de 2026",
+    "lastUpdateLabel": "Ultima atualizacao:",
+    "sections": [
+      {
+        "title": "1. Introducao",
+        "content": "<p>A <strong class='text-zinc-900 dark:text-zinc-200'>Pedrazzoli Digital</strong>, operada por Orlando Pedrazzoli, com sede em Lisboa, Portugal, valoriza e respeita a privacidade dos seus visitantes e clientes. Esta Politica de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais quando voce acessa nosso site (https://pedrazzolidigital.com).</p><p>Esta politica esta em conformidade com a Lei Geral de Protecao de Dados (LGPD — Lei n 13.709/2018) do Brasil e com o Regulamento Geral sobre a Protecao de Dados (RGPD/GDPR) da Uniao Europeia.</p>"
+      },
+      {
+        "title": "2. Responsavel pelo Tratamento dos Dados",
+        "content": "<p><strong class='text-zinc-900 dark:text-zinc-200'>Controlador:</strong> Orlando Pedrazzoli<br/><strong class='text-zinc-900 dark:text-zinc-200'>Email:</strong> <a href='mailto:pedrazzoliorlando@gmail.com' class='text-green-600 dark:text-green-400 hover:underline no-underline'>pedrazzoliorlando@gmail.com</a><br/><strong class='text-zinc-900 dark:text-zinc-200'>Localizacao:</strong> Lisboa, Portugal</p>"
+      },
+      {
+        "title": "3. Dados que Coletamos",
+        "content": "<p>Podemos coletar os seguintes tipos de dados pessoais:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Dados fornecidos por voce:</strong> Nome, email, numero de WhatsApp, tipo de negocio e mensagem — quando preenchidos voluntariamente no formulario de contato.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Dados coletados automaticamente:</strong> Endereco IP (anonimizado), tipo de navegador, sistema operacional, paginas visitadas, tempo de permanencia, origem do trafego e dados de interacao — coletados atraves de cookies de analise, apenas com seu consentimento previo.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Dados de cookies:</strong> Preferencias de tema (claro/escuro), estado de consentimento de cookies e identificadores de sessao. Para mais detalhes, consulte a secao 7 (Cookies).</p>"
+      },
+      {
+        "title": "4. Finalidades do Tratamento",
+        "content": "<p>Utilizamos seus dados pessoais para:</p><p>Responder a solicitacoes de contato e enviar orcamentos; melhorar a experiencia de navegacao no site; analisar o desempenho e o trafego do site (com consentimento); cumprir obrigacoes legais e fiscais; e comunicar atualizacoes sobre projetos em andamento.</p>"
+      },
+      {
+        "title": "5. Base Legal para o Tratamento (LGPD Art. 7)",
+        "content": "<p>O tratamento de dados pessoais e realizado com base em:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Consentimento</strong> (Art. 7, I) — para cookies de analise e marketing. Voce pode revogar seu consentimento a qualquer momento.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Execucao de contrato ou procedimentos preliminares</strong> (Art. 7, V) — para responder ao seu formulario de contato e enviar propostas.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Interesse legitimo</strong> (Art. 7, IX) — para melhorar nossos servicos e a experiencia no site, quando nao sobrepoe seus direitos.</p>"
+      },
+      {
+        "title": "6. Compartilhamento de Dados",
+        "content": "<p>Seus dados podem ser compartilhados com:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>EmailJS</strong> — para processamento do formulario de contato (dados transitam criptografados).</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Google Analytics</strong> — para analise de trafego (apenas com seu consentimento, dados anonimizados).</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Vercel</strong> — para hospedagem do site (logs de acesso basicos).</p><p>Nao vendemos, alugamos ou compartilhamos seus dados pessoais com terceiros para fins de marketing sem seu consentimento explicito.</p>"
+      },
+      {
+        "title": "7. Cookies",
+        "content": "<p>Utilizamos cookies para funcionalidades essenciais do site e, com seu consentimento, para analise de trafego. Ao visitar nosso site pela primeira vez, sera apresentado um banner de cookies onde pode aceitar, recusar ou personalizar suas preferencias.</p><p>Os tipos de cookies que utilizamos sao:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Essenciais:</strong> Necessarios para o funcionamento do site (preferencias de tema, estado do consentimento). Nao podem ser desativados.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Analise:</strong> Google Analytics para dados agregados de trafego. Ativados apenas com seu consentimento.</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Marketing:</strong> Pixels de redes sociais para publicidade direcionada. Ativados apenas com seu consentimento.</p>"
+      },
+      {
+        "title": "8. Seus Direitos (LGPD Art. 18 / GDPR Art. 15-22)",
+        "content": "<p>Voce tem o direito de:</p><p>Confirmar a existencia de tratamento dos seus dados; acessar seus dados pessoais; corrigir dados incompletos ou desatualizados; solicitar a anonimizacao, bloqueio ou eliminacao de dados desnecessarios; solicitar a portabilidade dos dados; revogar o consentimento a qualquer momento; e ser informado sobre as entidades com quem seus dados foram compartilhados.</p><p>Para exercer qualquer destes direitos, entre em contato pelo email <a href='mailto:pedrazzoliorlando@gmail.com' class='text-green-600 dark:text-green-400 hover:underline no-underline'>pedrazzoliorlando@gmail.com</a>. Responderemos no prazo de 15 dias uteis.</p>"
+      },
+      {
+        "title": "9. Retencao de Dados",
+        "content": "<p>Os dados pessoais fornecidos via formulario de contato sao retidos pelo tempo necessario para atender a sua solicitacao e, apos isso, por ate 5 anos para cumprimento de obrigacoes fiscais. Os dados de cookies sao retidos conforme a validade de cada cookie (maximo de 13 meses para cookies de analise).</p>"
+      },
+      {
+        "title": "10. Seguranca",
+        "content": "<p>Adotamos medidas tecnicas e organizacionais para proteger seus dados contra acesso nao autorizado, perda ou destruicao. O site utiliza protocolo HTTPS (criptografia SSL/TLS) e os dados do formulario sao transmitidos de forma criptografada via EmailJS.</p>"
+      },
+      {
+        "title": "11. Transferencia Internacional",
+        "content": "<p>Alguns dos nossos prestadores de servico (EmailJS, Google Analytics, Vercel) podem processar dados em servidores fora do Brasil e de Portugal. Nesses casos, garantimos que os dados sao tratados em conformidade com a LGPD e o GDPR, com base em clausulas contratuais padrao ou decisoes de adequacao.</p>"
+      },
+      {
+        "title": "12. Menores de Idade",
+        "content": "<p>Nosso site e servicos nao sao direcionados a menores de 18 anos. Nao coletamos intencionalmente dados de menores. Se tomarmos conhecimento de que dados de um menor foram coletados, procederemos a sua eliminacao imediata.</p>"
+      },
+      {
+        "title": "13. Alteracoes a Esta Politica",
+        "content": "<p>Esta Politica de Privacidade pode ser atualizada periodicamente. Recomendamos que a consulte regularmente. A data da ultima atualizacao esta indicada no topo deste documento.</p>"
+      },
+      {
+        "title": "14. Contato e Reclamacoes",
+        "content": "<p>Para duvidas, solicitacoes ou reclamacoes sobre o tratamento dos seus dados, entre em contato:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Email:</strong> <a href='mailto:pedrazzoliorlando@gmail.com' class='text-green-600 dark:text-green-400 hover:underline no-underline'>pedrazzoliorlando@gmail.com</a><br/><strong class='text-zinc-900 dark:text-zinc-200'>WhatsApp:</strong> <a href='https://wa.me/351912164220' class='text-green-600 dark:text-green-400 hover:underline no-underline' target='_blank' rel='noopener noreferrer'>+351 912 164 220</a></p><p>Caso considere que o tratamento dos seus dados nao esta em conformidade, pode apresentar reclamacao junto a Autoridade Nacional de Protecao de Dados (ANPD) do Brasil ou a Comissao Nacional de Protecao de Dados (CNPD) de Portugal.</p>"
+      }
+    ],
+    "manageCookiesBtn": "gerenciar suas preferencias de cookies"
+  },
+
+  "terms": {
+    "label": "Legal",
+    "heading": "Termos de",
+    "headingHighlight": "Uso",
+    "lastUpdate": "06 de Marco de 2026",
+    "lastUpdateLabel": "Ultima atualizacao:",
+    "sections": [
+      {
+        "title": "1. Aceitacao dos Termos",
+        "content": "<p>Ao acessar e utilizar o site <strong class='text-zinc-900 dark:text-zinc-200'>https://pedrazzolidigital.com</strong>, operado por <strong class='text-zinc-900 dark:text-zinc-200'>Pedrazzoli Digital</strong> (Orlando Pedrazzoli), voce concorda integralmente com estes Termos de Uso. Caso nao concorde com algum dos termos, solicitamos que nao utilize o site.</p>"
+      },
+      {
+        "title": "2. Descricao dos Servicos",
+        "content": "<p>A Pedrazzoli Digital oferece servicos de desenvolvimento web, incluindo criacao de sites institucionais, lojas virtuais (e-commerce), sistemas web personalizados e manutencao de projetos digitais. O site serve como vitrine dos nossos servicos e canal de contato com potenciais clientes.</p>"
+      },
+      {
+        "title": "3. Uso do Site",
+        "content": "<p>Ao utilizar este site, voce concorda em nao utilizar o site para fins ilegais ou nao autorizados; nao tentar acessar areas restritas do site ou dos nossos servidores; nao transmitir virus, malware ou qualquer codigo malicioso; nao reproduzir, duplicar ou copiar o conteudo do site sem autorizacao previa; e fornecer informacoes verdadeiras ao preencher o formulario de contato.</p>"
+      },
+      {
+        "title": "4. Propriedade Intelectual",
+        "content": "<p>Todo o conteudo do site — incluindo textos, design, codigo-fonte, imagens, logotipos, icones e a marca Pedrazzoli Digital — e propriedade exclusiva de Orlando Pedrazzoli e esta protegido pelas leis de propriedade intelectual do Brasil e de Portugal.</p><p>E proibida a reproducao, distribuicao, modificacao ou utilizacao comercial de qualquer conteudo do site sem autorizacao escrita previa. O codigo dos projetos desenvolvidos para clientes e regido por contratos especificos de prestacao de servico.</p>"
+      },
+      {
+        "title": "5. Portfolio e Projetos",
+        "content": "<p>Os projetos apresentados na secao de portfolio sao reais e representam trabalhos desenvolvidos para clientes da Pedrazzoli Digital. As informacoes, metricas e descricoes sao apresentadas com consentimento dos respectivos clientes. Os links para sites de clientes sao fornecidos para referencia — nao somos responsaveis pelo conteudo de sites de terceiros.</p>"
+      },
+      {
+        "title": "6. Formulario de Contato",
+        "content": "<p>As informacoes submetidas atraves do formulario de contato sao utilizadas exclusivamente para responder a sua solicitacao e enviar propostas comerciais. Os dados sao tratados conforme nossa <a href='/privacidade' class='text-green-600 dark:text-green-400 hover:underline no-underline font-medium'>Politica de Privacidade</a>. Nao utilizamos esses dados para envio de newsletters ou comunicacoes nao solicitadas.</p>"
+      },
+      {
+        "title": "7. Precos e Pagamentos",
+        "content": "<p>Os valores apresentados no site sao referenciais (a partir de). O valor final de cada projeto e definido em proposta comercial personalizada apos analise das necessidades especificas do cliente. Os termos de pagamento, prazos e condicoes sao estabelecidos em contrato de prestacao de servico individual.</p>"
+      },
+      {
+        "title": "8. Limitacao de Responsabilidade",
+        "content": "<p>A Pedrazzoli Digital empenha-se em manter o site disponivel e com informacoes atualizadas, porem nao garantimos a disponibilidade ininterrupta do site nem a ausencia total de erros. Nao nos responsabilizamos por danos indiretos, perda de dados ou lucros cessantes decorrentes do uso ou impossibilidade de uso do site.</p><p>O site pode conter links para sites de terceiros. Nao nos responsabilizamos pelo conteudo, politicas de privacidade ou praticas de qualquer site de terceiros.</p>"
+      },
+      {
+        "title": "9. Disponibilidade",
+        "content": "<p>Reservamo-nos o direito de modificar, suspender ou descontinuar qualquer aspecto do site a qualquer momento, sem aviso previo. Podemos tambem realizar manutencoes programadas que podem resultar em indisponibilidade temporaria.</p>"
+      },
+      {
+        "title": "10. Alteracoes aos Termos",
+        "content": "<p>Estes Termos de Uso podem ser alterados a qualquer momento. As alteracoes entram em vigor imediatamente apos a publicacao no site. O uso continuado do site apos as alteracoes implica a aceitacao dos novos termos. Recomendamos que consulte esta pagina periodicamente.</p>"
+      },
+      {
+        "title": "11. Legislacao Aplicavel",
+        "content": "<p>Estes Termos de Uso sao regidos pelas leis da Republica Portuguesa e pela legislacao brasileira (Codigo de Defesa do Consumidor e Lei n 13.709/2018 — LGPD), conforme aplicavel ao domicilio do utilizador. Eventuais litigios serao submetidos ao foro da comarca de Lisboa, Portugal, ou do domicilio do consumidor, conforme a legislacao aplicavel.</p>"
+      },
+      {
+        "title": "12. Contato",
+        "content": "<p>Para questoes relacionadas a estes Termos de Uso, entre em contato:</p><p><strong class='text-zinc-900 dark:text-zinc-200'>Email:</strong> <a href='mailto:pedrazzoliorlando@gmail.com' class='text-green-600 dark:text-green-400 hover:underline no-underline'>pedrazzoliorlando@gmail.com</a><br/><strong class='text-zinc-900 dark:text-zinc-200'>WhatsApp:</strong> <a href='https://wa.me/351912164220' class='text-green-600 dark:text-green-400 hover:underline no-underline' target='_blank' rel='noopener noreferrer'>+351 912 164 220</a></p>"
+      }
+    ]
   }
 }
