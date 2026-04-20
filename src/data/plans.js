@@ -2,8 +2,8 @@ export const plans = [
   {
     name: 'Site Institucional',
     desc: 'Presenca online profissional',
-    price: '1.897',
-    fromPrice: true,
+    idealFor:
+      'Empresas que precisam de uma presenca online profissional, com ate 5 paginas e foco em credibilidade.',
     features: [
       'Ate 5 paginas',
       'Design personalizado responsivo',
@@ -14,13 +14,13 @@ export const plans = [
       '30 dias de suporte',
     ],
     highlight: false,
-    cta: 'Quero Meu Site',
+    cta: 'Solicitar Orcamento',
   },
   {
     name: 'E-Commerce',
     desc: 'Loja online completa',
-    price: '2.997',
-    fromPrice: true,
+    idealFor:
+      'Negocios que querem vender online com checkout proprio, gestao de pedidos e total autonomia sobre a plataforma.',
     features: [
       'Produtos ilimitados',
       'Carrinho + checkout completo',
@@ -33,13 +33,13 @@ export const plans = [
       '60 dias de suporte',
     ],
     highlight: true,
-    cta: 'Quero Minha Loja',
+    cta: 'Solicitar Orcamento',
   },
   {
     name: 'Projeto Sob Medida',
     desc: 'Necessidades especificas',
-    price: 'Sob consulta',
-    fromPrice: false,
+    idealFor:
+      'Projetos com requisitos especificos — SaaS, dashboards, integracoes, apps ou sistemas internos completos.',
     features: [
       'Escopo personalizado',
       'Funcionalidades exclusivas',
@@ -54,8 +54,3 @@ export const plans = [
     cta: 'Solicitar Orcamento',
   },
 ];
-
-export const maintenancePlan = {
-  price: '297',
-  description: 'Atualizacoes, suporte continuo e melhorias no seu site.',
-};

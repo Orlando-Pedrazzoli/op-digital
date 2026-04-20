@@ -268,29 +268,36 @@
   },
 
   "plans": {
-    "label": "Investimento",
-    "title": "Planos <em>transparentes.</em>",
-    "description": "Pagamento unico pela criacao. Voce paga pelo que recebe — e recebe tudo funcionando.",
+    "label": "Escopos",
+    "title": "O que posso <em>construir para voce.</em>",
+    "description": "Cada projeto e unico. Aqui estao os tres escopos mais comuns que desenvolvo — o investimento e sempre definido apos entender suas necessidades especificas.",
     "warning": "<strong>Um site mal feito custa caro todos os dias.</strong> Lento, sem conversao ou travado em template generico — voce perde cliente antes mesmo de ele ver seu produto. Um site profissional trabalha por voce 24h por dia, 7 dias por semana.",
     "trustSignals": [
       "Contrato formal",
       "Nota fiscal emitida",
-      "Entrega em 15–45 dias",
-      "Atendimento Brasil inteiro"
+      "Entrega em 15-45 dias",
+      "Atendimento Brasil e Portugal"
     ],
     "guarantee": "<strong>Garantia de satisfacao:</strong> Ajustes ate a aprovacao final. Se o resultado nao ficar como esperado, refinamos juntos ate chegar la.",
-    "maintenance": "<strong>Manutencao mensal opcional:</strong> A partir de R$ {{price}}/mes para {{description}}",
-    "maintenancePrice": "297",
-    "maintenanceDesc": "atualizacoes, suporte continuo e melhorias no seu site.",
     "mostPopular": "Mais pedido",
-    "startingFrom": "a partir de",
+    "idealFor": "Ideal para",
+    "whatsIncluded": "O que esta incluso",
+    "pricingModel": {
+      "title": "Como funciona o investimento",
+      "description": "Cada negocio tem necessidades diferentes — por isso nao trabalho com precos fixos. Apos entender seu projeto, voce recebe uma proposta personalizada, detalhada e transparente.",
+      "points": [
+        "Proposta gratuita e sem compromisso em ate 24 horas",
+        "Pagamento unico pela criacao (sem mensalidade obrigatoria)",
+        "Parcelamento em ate 3x no cartao ou PIX",
+        "Tudo detalhado em contrato: escopo, prazo e investimento",
+        "Manutencao mensal opcional apos a entrega"
+      ]
+    },
     "list": [
       {
         "name": "Site Institucional",
         "desc": "Presenca online profissional",
-        "price": "1.897",
-        "currency": "R$",
-        "fromPrice": true,
+        "idealFor": "Empresas que precisam de uma presenca online profissional, com ate 5 paginas e foco em credibilidade.",
         "features": [
           "Ate 5 paginas",
           "Design personalizado responsivo",
@@ -300,14 +307,12 @@
           "Google Analytics integrado",
           "30 dias de suporte"
         ],
-        "cta": "Quero Meu Site"
+        "cta": "Solicitar Orcamento"
       },
       {
         "name": "E-Commerce",
         "desc": "Loja online completa",
-        "price": "2.997",
-        "currency": "R$",
-        "fromPrice": true,
+        "idealFor": "Negocios que querem vender online com checkout proprio, gestao de pedidos e total autonomia sobre a plataforma.",
         "features": [
           "Produtos ilimitados",
           "Carrinho + checkout completo",
@@ -319,14 +324,12 @@
           "SEO otimizado",
           "60 dias de suporte"
         ],
-        "cta": "Quero Minha Loja"
+        "cta": "Solicitar Orcamento"
       },
       {
         "name": "Projeto Sob Medida",
         "desc": "Necessidades especificas",
-        "price": "Sob consulta",
-        "currency": "",
-        "fromPrice": false,
+        "idealFor": "Projetos com requisitos especificos — SaaS, dashboards, integracoes, apps ou sistemas internos completos.",
         "features": [
           "Escopo personalizado",
           "Funcionalidades exclusivas",
@@ -501,8 +504,8 @@
       "description": "Conheca Orlando Pedrazzoli — Full Stack Developer com 10+ anos de experiencia empreendedora e 3+ anos em desenvolvimento web."
     },
     "plans": {
-      "title": "Planos e Precos",
-      "description": "Planos transparentes para criacao de sites e lojas online. Site institucional a partir de R$1.897, e-commerce a partir de R$2.997. Sem mensalidade, sem surpresas."
+      "title": "Escopos de Projeto",
+      "description": "Conheca os tipos de projeto que desenvolvo: sites institucionais, lojas online e sistemas sob medida. Proposta personalizada e transparente para cada negocio."
     },
     "faq": {
       "title": "FAQ | Pedrazzoli Digital",

@@ -268,29 +268,36 @@
   },
 
   "plans": {
-    "label": "Investment",
-    "title": "<em>Transparent</em> plans.",
-    "description": "One-time payment for creation. You pay for what you get — and you get everything working.",
+    "label": "Scopes",
+    "title": "What I can <em>build for you.</em>",
+    "description": "Every project is unique. Here are the three most common scopes I develop — the investment is always defined after understanding your specific needs.",
     "warning": "<strong>A poorly made site costs you every day.</strong> Slow, no conversion or stuck on a generic template — you lose clients before they even see your product. A professional site works for you 24/7.",
     "trustSignals": [
       "Formal contract",
       "Invoice issued",
       "Delivery in 15-45 days",
-      "Service across all of Brazil"
+      "Service across Brazil and Portugal"
     ],
     "guarantee": "<strong>Satisfaction guarantee:</strong> Adjustments until final approval. If the result isn't as expected, we refine together until we get there.",
-    "maintenance": "<strong>Optional monthly maintenance:</strong> Starting at {{price}}/month for {{description}}",
-    "maintenancePrice": "\u20ac50",
-    "maintenanceDesc": "updates, ongoing support and improvements to your site.",
     "mostPopular": "Most requested",
-    "startingFrom": "starting from",
+    "idealFor": "Ideal for",
+    "whatsIncluded": "What's included",
+    "pricingModel": {
+      "title": "How the investment works",
+      "description": "Every business has different needs — that's why I don't work with fixed prices. After understanding your project, you receive a personalized, detailed and transparent proposal.",
+      "points": [
+        "Free proposal with no commitment within 24 hours",
+        "One-time payment for creation (no mandatory monthly fee)",
+        "Up to 3x on card or PIX",
+        "Everything detailed in contract: scope, timeline and investment",
+        "Optional monthly maintenance after delivery"
+      ]
+    },
     "list": [
       {
         "name": "Institutional Website",
         "desc": "Professional online presence",
-        "price": "300",
-        "currency": "\u20ac",
-        "fromPrice": true,
+        "idealFor": "Companies that need a professional online presence, with up to 5 pages and a focus on credibility.",
         "features": [
           "Up to 5 pages",
           "Custom responsive design",
@@ -300,14 +307,12 @@
           "Google Analytics integrated",
           "30 days of support"
         ],
-        "cta": "I Want My Website"
+        "cta": "Request a Quote"
       },
       {
         "name": "E-Commerce",
         "desc": "Complete online store",
-        "price": "500",
-        "currency": "\u20ac",
-        "fromPrice": true,
+        "idealFor": "Businesses that want to sell online with their own checkout, order management and full platform autonomy.",
         "features": [
           "Unlimited products",
           "Cart + complete checkout",
@@ -319,14 +324,12 @@
           "Optimized SEO",
           "60 days of support"
         ],
-        "cta": "I Want My Store"
+        "cta": "Request a Quote"
       },
       {
         "name": "Custom Project",
         "desc": "Specific needs",
-        "price": "On request",
-        "currency": "",
-        "fromPrice": false,
+        "idealFor": "Projects with specific requirements — SaaS, dashboards, integrations, apps or complete internal systems.",
         "features": [
           "Custom scope",
           "Exclusive features",
@@ -337,7 +340,7 @@
           "Team training",
           "Ongoing support + maintenance"
         ],
-        "cta": "Request Quote"
+        "cta": "Request a Quote"
       }
     ]
   },
@@ -501,8 +504,8 @@
       "description": "Meet Orlando Pedrazzoli — Full Stack Developer with 10+ years of entrepreneurial experience and 3+ years in web development."
     },
     "plans": {
-      "title": "Plans and Pricing",
-      "description": "Transparent plans for website and online store creation. Institutional site starting at R$1,897, e-commerce starting at R$2,997. No monthly fees, no surprises."
+      "title": "Project Scopes",
+      "description": "Discover the types of projects I develop: institutional websites, online stores and custom systems. Personalized and transparent proposal for every business."
     },
     "faq": {
       "title": "FAQ | Pedrazzoli Digital",
